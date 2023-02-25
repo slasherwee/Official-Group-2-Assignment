@@ -52,16 +52,16 @@
             this.panelTutor.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTutor.Location = new System.Drawing.Point(0, 0);
             this.panelTutor.Name = "panelTutor";
-            this.panelTutor.Size = new System.Drawing.Size(982, 102);
+            this.panelTutor.Size = new System.Drawing.Size(982, 117);
             this.panelTutor.TabIndex = 2;
             // 
             // pbCourse
             // 
             this.pbCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.pbCourse.Image = global::Group2_Assignment.Properties.Resources.execution;
-            this.pbCourse.Location = new System.Drawing.Point(249, 42);
+            this.pbCourse.Location = new System.Drawing.Point(256, 34);
             this.pbCourse.Name = "pbCourse";
-            this.pbCourse.Size = new System.Drawing.Size(60, 38);
+            this.pbCourse.Size = new System.Drawing.Size(75, 52);
             this.pbCourse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCourse.TabIndex = 8;
             this.pbCourse.TabStop = false;
@@ -81,10 +81,10 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.Location = new System.Drawing.Point(337, 34);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(398, 45);
+            this.lblTitle.Size = new System.Drawing.Size(443, 50);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "COURSE MANAGEMENT";
             // 

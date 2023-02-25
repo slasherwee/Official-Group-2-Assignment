@@ -17,22 +17,24 @@ namespace Group2_Assignment
     public partial class Tutor_Add_Course : Form
     {
         public static string id;//global
-        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+
+        private Color _formColor;
         public Tutor_Add_Course()
         {
             InitializeComponent();
         }
 
-        public Tutor_Add_Course(string i)
+        public Tutor_Add_Course(string i, Color formColor)
         {
             InitializeComponent();
             id = i;
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Course_Management tcm = new Tutor_Course_Management();
+            Tutor_Course_Management tcm = new Tutor_Course_Management(this.BackColor);
             tcm.ShowDialog();
         }
 
@@ -128,6 +130,7 @@ namespace Group2_Assignment
 
         private void Tutor_Add_Course_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
             Tutor obj1 = new Tutor(id);
             DataTable dt = obj1.viewCourse(obj1);
             dgvCourse.DataSource = dt;

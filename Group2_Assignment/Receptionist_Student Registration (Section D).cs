@@ -47,6 +47,10 @@ namespace Group2_Assignment
                 else
                     MessageBox.Show("Account must be activated in order to proceed with student registration", "Student Account Activation");
             }
+            else
+            {
+                c = 0;
+            }
         }
 
         private void btn_cancel_4_Click(object sender, EventArgs e)

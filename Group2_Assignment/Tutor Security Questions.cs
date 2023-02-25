@@ -13,21 +13,23 @@ namespace Group2_Assignment
     public partial class Tutor_Security_Questions : Form
     {
         public static string id;//global
+        private Color _formColor;
         public Tutor_Security_Questions()
         {
             InitializeComponent();
         }
 
-        public Tutor_Security_Questions(string i)
+        public Tutor_Security_Questions(string i, Color formColor)
         {
             InitializeComponent();
             id = i;
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Portal tp = new Tutor_Portal();
+            Tutor_Portal tp = new Tutor_Portal(this.BackColor);
             tp.ShowDialog();
         }
 
@@ -53,6 +55,8 @@ namespace Group2_Assignment
 
         private void Tutor_Security_Questions_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
+
             Tutor obj1 = new Tutor(id);
             Tutor.viewSecurityQuestion(obj1);
             txtFAns.Text = obj1.Ans_q1;

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tutor_Manage_Course));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTutor = new System.Windows.Forms.Panel();
             this.pbSchedule = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
@@ -58,16 +60,16 @@
             this.panelTutor.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTutor.Location = new System.Drawing.Point(0, 0);
             this.panelTutor.Name = "panelTutor";
-            this.panelTutor.Size = new System.Drawing.Size(982, 102);
+            this.panelTutor.Size = new System.Drawing.Size(982, 117);
             this.panelTutor.TabIndex = 4;
             // 
             // pbSchedule
             // 
             this.pbSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.pbSchedule.Image = ((System.Drawing.Image)(resources.GetObject("pbSchedule.Image")));
-            this.pbSchedule.Location = new System.Drawing.Point(249, 41);
+            this.pbSchedule.Location = new System.Drawing.Point(256, 34);
             this.pbSchedule.Name = "pbSchedule";
-            this.pbSchedule.Size = new System.Drawing.Size(60, 38);
+            this.pbSchedule.Size = new System.Drawing.Size(75, 52);
             this.pbSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSchedule.TabIndex = 13;
             this.pbSchedule.TabStop = false;
@@ -87,11 +89,11 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitle.Location = new System.Drawing.Point(337, 34);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(303, 45);
+            this.lblTitle.Size = new System.Drawing.Size(337, 50);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "MANAGE COURSE";
             // 
@@ -195,15 +197,31 @@
             this.dgvCourse.AllowUserToDeleteRows = false;
             this.dgvCourse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCourse.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCourse.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(251)))), ((int)(((byte)(233)))));
+            this.dgvCourse.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCourse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCourse.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCourse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvCourse.Location = new System.Drawing.Point(0, 102);
+            this.dgvCourse.Location = new System.Drawing.Point(0, 117);
             this.dgvCourse.Name = "dgvCourse";
             this.dgvCourse.ReadOnly = true;
             this.dgvCourse.RowHeadersWidth = 51;
             this.dgvCourse.RowTemplate.Height = 29;
-            this.dgvCourse.Size = new System.Drawing.Size(982, 188);
+            this.dgvCourse.Size = new System.Drawing.Size(982, 224);
             this.dgvCourse.TabIndex = 36;
             this.dgvCourse.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCourse_RowHeaderMouseClick_1);
             // 
@@ -229,7 +247,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tutor_Manage_Course";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tutor_Manage_Course";
+            this.Text = "Tutor Manage Course";
             this.Load += new System.EventHandler(this.Tutor_Manage_Course_Load);
             this.panelTutor.ResumeLayout(false);
             this.panelTutor.PerformLayout();

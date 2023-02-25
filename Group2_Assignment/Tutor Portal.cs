@@ -29,10 +29,11 @@ namespace Group2_Assignment
             _formColor = formColor;
         }
 
-        public Tutor_Portal(string n)
+        public Tutor_Portal(string n, Color formColor)
         {
             InitializeComponent();
             id = n;
+            _formColor = formColor;
         }
 
         private void Tutor_Portal_Load(object sender, EventArgs e)
@@ -71,49 +72,49 @@ namespace Group2_Assignment
         private void btnCourse_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Course_Management tcm = new Tutor_Course_Management(id);
+            Tutor_Course_Management tcm = new Tutor_Course_Management(id, this.BackColor);
             tcm.ShowDialog();
         }
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Class_Schedule tcs = new Tutor_Class_Schedule(id);
+            Tutor_Class_Schedule tcs = new Tutor_Class_Schedule(id, this.BackColor);
             tcs.ShowDialog();
         }
 
         private void btnViewStudent_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_View_Student_Enrolled tvse = new Tutor_View_Student_Enrolled(id);
+            Tutor_View_Student_Enrolled tvse = new Tutor_View_Student_Enrolled(id, this.BackColor);
             tvse.ShowDialog();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Personal_Information tpi = new Tutor_Personal_Information(id);  
+            Tutor_Personal_Information tpi = new Tutor_Personal_Information(id, this.BackColor);  
             tpi.ShowDialog();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Change_Password tcp = new Tutor_Change_Password(id);
+            Tutor_Change_Password tcp = new Tutor_Change_Password(id, this.BackColor);
             tcp.ShowDialog();
         }
 
         private void btnUpdateSecurityQuestions_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Security_Questions tsq = new Tutor_Security_Questions(id);
+            Tutor_Security_Questions tsq = new Tutor_Security_Questions(id, this.BackColor);
             tsq.ShowDialog();
         }
 
         private void btnTheme_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Theme theme= new Theme();
+            Theme theme= new Theme(this.BackColor);
             theme.ShowDialog();
         }
 

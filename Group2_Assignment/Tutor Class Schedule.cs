@@ -13,7 +13,7 @@ namespace Group2_Assignment
 {
     public partial class Tutor_Class_Schedule : Form
     {
-
+        private Color _formColor;
         public static string id;//global
 
         public Tutor_Class_Schedule()
@@ -21,16 +21,17 @@ namespace Group2_Assignment
             InitializeComponent();
         }
 
-        public Tutor_Class_Schedule(string a)
+        public Tutor_Class_Schedule(string a, Color formColor)
         {
             InitializeComponent();
             id = a;
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Portal tp = new Tutor_Portal();
+            Tutor_Portal tp = new Tutor_Portal(this.BackColor);
             tp.ShowDialog();
         }
 
@@ -82,6 +83,8 @@ namespace Group2_Assignment
 
         private void Tutor_Class_Schedule_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
+            
             Tutor obj1 = new Tutor(id);
 
             DataTable dt = obj1.viewDay(obj1);

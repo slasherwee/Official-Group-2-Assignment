@@ -52,7 +52,7 @@
             this.lbl_update_subject_enrolment.Font = new System.Drawing.Font("Segoe UI", 18.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_update_subject_enrolment.Location = new System.Drawing.Point(-2, 0);
             this.lbl_update_subject_enrolment.Name = "lbl_update_subject_enrolment";
-            this.lbl_update_subject_enrolment.Size = new System.Drawing.Size(1074, 135);
+            this.lbl_update_subject_enrolment.Size = new System.Drawing.Size(1900, 228);
             this.lbl_update_subject_enrolment.TabIndex = 5;
             this.lbl_update_subject_enrolment.Text = "\r\n                                      UPDATE SUBJECT ENROLMENT                 " +
     "          \r\n                                         ";
@@ -60,6 +60,7 @@
             // dgv_update_subject_enrolment
             // 
             this.dgv_update_subject_enrolment.AllowUserToAddRows = false;
+            this.dgv_update_subject_enrolment.AllowUserToDeleteRows = false;
             this.dgv_update_subject_enrolment.AllowUserToOrderColumns = true;
             this.dgv_update_subject_enrolment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(251)))), ((int)(((byte)(233)))));
             this.dgv_update_subject_enrolment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -166,7 +167,7 @@
             // 
             this.txtRequestID.Location = new System.Drawing.Point(126, 36);
             this.txtRequestID.Name = "txtRequestID";
-            this.txtRequestID.Size = new System.Drawing.Size(109, 27);
+            this.txtRequestID.Size = new System.Drawing.Size(109, 43);
             this.txtRequestID.TabIndex = 46;
             // 
             // lbl_request_id
@@ -175,7 +176,7 @@
             this.lbl_request_id.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_request_id.Location = new System.Drawing.Point(6, 32);
             this.lbl_request_id.Name = "lbl_request_id";
-            this.lbl_request_id.Size = new System.Drawing.Size(114, 28);
+            this.lbl_request_id.Size = new System.Drawing.Size(210, 48);
             this.lbl_request_id.TabIndex = 45;
             this.lbl_request_id.Text = "Request ID :";
             // 

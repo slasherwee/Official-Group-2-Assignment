@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tutor_Class_Schedule));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTutor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
@@ -40,7 +42,7 @@
             this.txtTime = new System.Windows.Forms.TextBox();
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
-            this.lblLocation = new System.Windows.Forms.Label();
+            this.lblVenue = new System.Windows.Forms.Label();
             this.panelTutor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
@@ -55,16 +57,16 @@
             this.panelTutor.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTutor.Location = new System.Drawing.Point(0, 0);
             this.panelTutor.Name = "panelTutor";
-            this.panelTutor.Size = new System.Drawing.Size(982, 102);
+            this.panelTutor.Size = new System.Drawing.Size(982, 117);
             this.panelTutor.TabIndex = 5;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.pictureBox1.Image = global::Group2_Assignment.Properties.Resources.administration;
-            this.pictureBox1.Location = new System.Drawing.Point(225, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(232, 34);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;
@@ -84,11 +86,11 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitle.Location = new System.Drawing.Point(337, 34);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(295, 45);
+            this.lblTitle.Size = new System.Drawing.Size(328, 50);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "CLASS SCHEDULE";
             // 
@@ -108,9 +110,10 @@
             // lblFilter
             // 
             this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblFilter.Location = new System.Drawing.Point(38, 143);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(110, 28);
+            this.lblFilter.Size = new System.Drawing.Size(115, 28);
             this.lblFilter.TabIndex = 36;
             this.lblFilter.Text = "Select day :";
             // 
@@ -126,7 +129,24 @@
             // 
             this.dgvSchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSchedule.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSchedule.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSchedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSchedule.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSchedule.Location = new System.Drawing.Point(0, 209);
             this.dgvSchedule.Name = "dgvSchedule";
             this.dgvSchedule.RowHeadersWidth = 51;
@@ -152,20 +172,22 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTime.Location = new System.Drawing.Point(515, 471);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(54, 28);
+            this.lblTime.Size = new System.Drawing.Size(57, 28);
             this.lblTime.TabIndex = 40;
             this.lblTime.Text = "Time";
             // 
-            // lblLocation
+            // lblVenue
             // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(42, 472);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(87, 28);
-            this.lblLocation.TabIndex = 39;
-            this.lblLocation.Text = "Location";
+            this.lblVenue.AutoSize = true;
+            this.lblVenue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblVenue.Location = new System.Drawing.Point(42, 472);
+            this.lblVenue.Name = "lblVenue";
+            this.lblVenue.Size = new System.Drawing.Size(70, 28);
+            this.lblVenue.TabIndex = 39;
+            this.lblVenue.Text = "Venue";
             // 
             // Tutor_Class_Schedule
             // 
@@ -175,7 +197,7 @@
             this.Controls.Add(this.txtTime);
             this.Controls.Add(this.txtLocation);
             this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.lblLocation);
+            this.Controls.Add(this.lblVenue);
             this.Controls.Add(this.dgvSchedule);
             this.Controls.Add(this.cmbDay);
             this.Controls.Add(this.lblFilter);
@@ -185,7 +207,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tutor_Class_Schedule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tutor_Class_Schedule";
+            this.Text = "Tutor Class Schedule";
             this.Load += new System.EventHandler(this.Tutor_Class_Schedule_Load);
             this.panelTutor.ResumeLayout(false);
             this.panelTutor.PerformLayout();
@@ -209,6 +231,6 @@
         private TextBox txtTime;
         private TextBox txtLocation;
         private Label lblTime;
-        private Label lblLocation;
+        private Label lblVenue;
     }
 }

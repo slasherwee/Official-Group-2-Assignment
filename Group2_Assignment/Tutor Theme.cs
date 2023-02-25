@@ -12,9 +12,17 @@ namespace Group2_Assignment
 {
     public partial class Theme : Form
     {
+        private Color _formColor;
+
         public Theme()
         {
             InitializeComponent();
+        }
+
+        public Theme(Color formColor)
+        {
+            InitializeComponent();
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -173,7 +173,7 @@
             this.pb_receptionist_logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pb_receptionist_logo.BackgroundImage")));
             this.pb_receptionist_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pb_receptionist_logo.Location = new System.Drawing.Point(405, 114);
-            this.pb_receptionist_logo.Margin = new System.Windows.Forms.Padding(1);
+            this.pb_receptionist_logo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.pb_receptionist_logo.Name = "pb_receptionist_logo";
             this.pb_receptionist_logo.Size = new System.Drawing.Size(186, 144);
             this.pb_receptionist_logo.TabIndex = 21;
@@ -220,6 +220,7 @@
             this.btnUpdateSecurityQuestions.Text = "Update Security Questions";
             this.btnUpdateSecurityQuestions.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdateSecurityQuestions.UseVisualStyleBackColor = false;
+            this.btnUpdateSecurityQuestions.Click += new System.EventHandler(this.btnUpdateSecurityQuestions_Click);
             // 
             // btnChangePassword
             // 
@@ -236,6 +237,7 @@
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnTheme
             // 
@@ -253,6 +255,7 @@
             this.btnTheme.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTheme.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTheme.UseVisualStyleBackColor = false;
+            this.btnTheme.Click += new System.EventHandler(this.btnTheme_Click);
             // 
             // btnSetting
             // 
@@ -268,8 +271,7 @@
             // 
             // frm_Main_Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(251)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(982, 653);
             this.Controls.Add(this.ps_setting);
@@ -284,7 +286,7 @@
             this.Controls.Add(this.btn_update_profile);
             this.Controls.Add(this.lbl_etc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "frm_Main_Menu";
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.frm_Main_Menu_Load);

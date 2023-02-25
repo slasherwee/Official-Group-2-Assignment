@@ -67,7 +67,7 @@ namespace Group2_Assignment
                     LoginPage lp = new LoginPage();
                     lp.Hide();
                     //redirects to Tutor Portal form
-                    Tutor_Portal a = new Tutor_Portal(un);//un=jeremy
+                    Tutor_Portal a = new Tutor_Portal(un, lp.BackColor);//un=jeremy
                     a.ShowDialog();
                 }
                 else if (userRole == "student")

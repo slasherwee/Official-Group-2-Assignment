@@ -14,7 +14,7 @@ namespace Group2_Assignment
     public partial class frm_update_profile : Form
     {
         public static string id;
-        public string stud_ID { get; set; }
+        public string r_ID { get; set; }
         public frm_update_profile()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace Group2_Assignment
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            lblUserID.Text = stud_ID;
+            lblUserID.Text = r_ID;
             txt_fname.ReadOnly = false;
             txt_lname.ReadOnly = false;
             txt_working_experience.ReadOnly = false;
@@ -109,9 +109,9 @@ namespace Group2_Assignment
 
             else
             {
-                Receptionist obj1 = new Receptionist(stud_ID);
+                Receptionist obj1 = new Receptionist(r_ID);
                 MessageBox.Show(obj1.updateProfile(txt_fname.Text, txt_lname.Text, txt_working_experience.Text, txt_office_location.Text, txt_email.Text, txt_contact_num.Text));
-                lblUserID.Text = stud_ID;
+                lblUserID.Text = r_ID;
                 txt_fname.ReadOnly = true;
                 txt_lname.ReadOnly = true;
                 txt_working_experience.ReadOnly = true;
@@ -127,7 +127,7 @@ namespace Group2_Assignment
 
         private void frm_update_profile_Load(object sender, EventArgs e)
         {
-            lblUserID.Text = stud_ID;
+            lblUserID.Text = r_ID;
             txt_fname.ReadOnly = true;
             txt_lname.ReadOnly = true;
             txt_working_experience.ReadOnly = true;
@@ -135,7 +135,7 @@ namespace Group2_Assignment
             txt_email.ReadOnly = true;
             txt_contact_num.ReadOnly = true;
 
-        Receptionist obj1 = new Receptionist(stud_ID);
+        Receptionist obj1 = new Receptionist(r_ID);
 
             //calling static method require className.Method(..)
             //pass object obj1 to method ViewProfile
