@@ -210,6 +210,7 @@
             this.btnTheme.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTheme.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTheme.UseVisualStyleBackColor = false;
+            this.btnTheme.Click += new System.EventHandler(this.btnTheme_Click_1);
             // 
             // btnSetting
             // 
