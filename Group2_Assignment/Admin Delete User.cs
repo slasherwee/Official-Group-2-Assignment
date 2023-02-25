@@ -14,10 +14,12 @@ namespace Group2_Assignment
 {
     public partial class frmAdminDeleteUser : Form
     {
+        private Color _formColor;
 
-        public frmAdminDeleteUser()
+        public frmAdminDeleteUser(Color formColor)
         {
             InitializeComponent();
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -27,7 +29,7 @@ namespace Group2_Assignment
             if (r1 == DialogResult.Yes)
             {
                 this.Hide();
-                frmAdminMenu am = new frmAdminMenu();
+                frmAdminMenu am = new frmAdminMenu(_formColor);
                 am.ShowDialog();
             }
         }
@@ -87,5 +89,9 @@ namespace Group2_Assignment
             }
         }
 
+        private void frmAdminDeleteUser_Load(object sender, EventArgs e)
+        {
+            this.BackColor = _formColor;
+        }
     }
 }

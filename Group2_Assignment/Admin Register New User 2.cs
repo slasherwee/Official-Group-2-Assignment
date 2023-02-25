@@ -18,7 +18,8 @@ namespace Group2_Assignment
 {
     public partial class frmAdminRegisterNewUser2 : Form
     {
-        public frmAdminRegisterNewUser2()
+        private Color _formColor;
+        public frmAdminRegisterNewUser2(Color formColor)
         {
             InitializeComponent();
             grp.Hide();
@@ -26,6 +27,7 @@ namespace Group2_Assignment
             lblWorkingHours.Hide();
             lblExperience.Hide();
             txtExperience.Hide();
+            _formColor = formColor;
         }
 
         string FN = frmAdminRegisterNewUser1.FirstName;
@@ -45,6 +47,7 @@ namespace Group2_Assignment
 
         private void frmRegisterNewUser2_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
             for (int i = 1; i <= 100; i++)
             {
                 lstHourSubject1.Items.Add(i.ToString());
@@ -301,10 +304,10 @@ namespace Group2_Assignment
                                         //calling static method require className.Method(obj1)
                                         MessageBox.Show(obj10.AddTutortoUser());
 
-                                        frmAdminRegisterNewUser1 ar1 = new frmAdminRegisterNewUser1();
+                                        frmAdminRegisterNewUser1 ar1 = new frmAdminRegisterNewUser1(_formColor);
                                         ar1.Hide();
                                         this.Hide();
-                                        frmAdminMenu am = new frmAdminMenu();
+                                        frmAdminMenu am = new frmAdminMenu(_formColor);
                                         am.ShowDialog();
                                     }
                                 }
@@ -326,10 +329,10 @@ namespace Group2_Assignment
                                     Payroll obj3 = new Payroll(SalaryID, id, role, "-", decimal.Parse(Salary), int.Parse(cmbHour.Text));
                                     obj3.AddSalary();
 
-                                    frmAdminRegisterNewUser1 ar1 = new frmAdminRegisterNewUser1();
+                                    frmAdminRegisterNewUser1 ar1 = new frmAdminRegisterNewUser1(_formColor);
                                     ar1.Close();
                                     this.Hide();
-                                    frmAdminMenu am = new frmAdminMenu();
+                                    frmAdminMenu am = new frmAdminMenu(_formColor);
                                     am.ShowDialog();
                                 }
                                 else

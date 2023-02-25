@@ -12,9 +12,17 @@ namespace Group2_Assignment
     public partial class frmAdminPersonalInfo : Form
     {
         public static string UserID;//global variable
-        public frmAdminPersonalInfo()
+        private Color _formColor;
+
+        public frmAdminPersonalInfo(string id, Color formColor)
         {
             InitializeComponent();
+            UserID = id;
+            _formColor = formColor;
+        }
+
+        private void AdminPersonalInfo_Load(object sender, EventArgs e)
+        {
             //Disable textbox for editing
             txtFirstName.ReadOnly = true;
             txtLastName.ReadOnly = true;
@@ -25,16 +33,8 @@ namespace Group2_Assignment
             //Hide button name as btnDone
             btnDone.Hide();
 
-        }
+            this.BackColor = _formColor;
 
-        public frmAdminPersonalInfo(string id)
-        {
-            InitializeComponent();
-            UserID = id;
-        }
-
-        private void AdminPersonalInfo_Load(object sender, EventArgs e)
-        {
             lblUserID.Text = UserID;
             Admin obj1 = new Admin(UserID);
 
@@ -56,7 +56,7 @@ namespace Group2_Assignment
             if (r1 == DialogResult.Yes)
             {
                 this.Hide();
-                frmAdminMenu am = new frmAdminMenu();
+                frmAdminMenu am = new frmAdminMenu(_formColor);
                 am.ShowDialog();
             }
         }

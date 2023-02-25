@@ -22,17 +22,18 @@ namespace Group2_Assignment
         public static string ConfirmPassword;
         public static string SecurityQuestion1;
         public static string SecurityQuestion2;
+        private Color _formColor;
 
-
-        public frmAdminRegisterNewUser1()
+        public frmAdminRegisterNewUser1(Color formColor)
         {
             InitializeComponent();
+            _formColor = formColor;
 
         }
 
         private void frmRegisterNewUser1_Load(object sender, EventArgs e)
         {
-            
+            this.BackColor = _formColor;
         }
 
 
@@ -58,7 +59,7 @@ namespace Group2_Assignment
             SecurityQuestion1 = txtSecurityQuestion1.Text;
             SecurityQuestion2 = txtSecurityQuestion2.Text;
 
-            frmAdminRegisterNewUser2 rnu = new frmAdminRegisterNewUser2();
+            frmAdminRegisterNewUser2 rnu = new frmAdminRegisterNewUser2(_formColor);
             rnu.ShowDialog();
         }
 
@@ -70,7 +71,7 @@ namespace Group2_Assignment
             if (r1 == DialogResult.Yes)
             {
                 this.Hide();
-                frmAdminMenu am = new frmAdminMenu();
+                frmAdminMenu am = new frmAdminMenu(_formColor);
                 am.ShowDialog();
             }
         }
