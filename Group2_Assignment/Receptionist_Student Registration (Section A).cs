@@ -136,7 +136,6 @@ namespace Group2_Assignment
                 {
                     MessageBox.Show("Please enter numbers only for Student ID", "Student ID");
                 }
-
                 else
                 {
                     if (Regex.IsMatch(txt_fname.Text, pattern))
@@ -153,99 +152,118 @@ namespace Group2_Assignment
                                     if (txt_email.Text.Length < 41)
                                     {
                                         c = c + 1;
-                                        if (txt_house_address.Text.Length < 1001)
+                                        if (Regex.IsMatch(txt_email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
                                         {
                                             c = c + 1;
-                                            if (txt_s_id.Text.Length < 11)
+                                            if (txt_house_address.Text.Length < 1001)
                                             {
                                                 c = c + 1;
-                                                if (txt_contact_number.Text.Length < 21)
+                                                if (txt_s_id.Text.Length < 11)
                                                 {
                                                     c = c + 1;
-                                                    while (!int.TryParse(txt_contact_number.Text, out number))
-                                                    {
-                                                        if (!messageBoxShown)
-                                                        {
-                                                            MessageBox.Show("Please enter a valid number.", "Contact Number");
-                                                            messageBoxShown = true;
-                                                        }
-                                                        txt_contact_number.Focus();
-                                                        txt_contact_number.SelectAll();
-                                                        c = c - 1;
-                                                        break;
-                                                    }
-                                                    if (txt_ic_pass.Text.Length < 11)
+                                                    if (txt_contact_number.Text.Length < 12)
                                                     {
                                                         c = c + 1;
-                                                        while (!int.TryParse(txt_ic_pass.Text, out number))
-                                                        {
-                                                            if (!messageBoxShown)
-                                                            {
-                                                                MessageBox.Show("Please enter a valid number.", "IC/Passport Number");
-                                                                messageBoxShown = true;
-                                                            }
-                                                            txt_ic_pass.Focus();
-                                                            txt_ic_pass.SelectAll();
-                                                            c = c - 1;
-                                                            break;
-                                                        }
-                                                        if (cb_gender.SelectedIndex != -1)
+                                                        if ((int.TryParse(txt_contact_number.Text.Replace("-", ""), out int contact_no)))
                                                         {
                                                             c = c + 1;
-                                                            if (cb_nationality.SelectedIndex != -1)
+                                                            if ((Regex.IsMatch(txt_contact_number.Text, @"^01[0-9]-\d{7,8}$")))
                                                             {
                                                                 c = c + 1;
-                                                                if (cb_stud_ic_or_pass.SelectedIndex != -1)
+                                                                if (txt_ic_pass.Text.Length < 11)
                                                                 {
                                                                     c = c + 1;
-                                                                    if (c == 11)
+                                                                    while (!int.TryParse(txt_ic_pass.Text, out number))
                                                                     {
-                                                                        obj1.InsertData_Section_A(cb_nationality.Text, dtp_dob.Text, txt_fname.Text, txt_lname.Text, txt_ic_pass.Text, cb_stud_ic_or_pass.Text, a, txt_house_address.Text, txt_contact_number.Text, txt_email.Text, cb_gender.Text);
-                                                                        this.Hide();
-                                                                        frm_Student_Registration__Section_B_ secondForm = new frm_Student_Registration__Section_B_();
-                                                                        secondForm.stud_ID = stud_ID;
-                                                                        secondForm.Show();
+                                                                        if (!messageBoxShown)
+                                                                        {
+                                                                            MessageBox.Show("Please enter a valid number", "IC/Passport Number");
+                                                                            messageBoxShown = true;
+                                                                        }
+                                                                        txt_ic_pass.Focus();
+                                                                        txt_ic_pass.SelectAll();
+                                                                        c = c - 1;
+                                                                        break;
+                                                                    }
+                                                                    if (cb_gender.SelectedIndex != -1)
+                                                                    {
+                                                                        c = c + 1;
+                                                                        if (cb_nationality.SelectedIndex != -1)
+                                                                        {
+                                                                            c = c + 1;
+                                                                            if (cb_stud_ic_or_pass.SelectedIndex != -1)
+                                                                            {
+                                                                                c = c + 1;
+                                                                                if (c == 14)
+                                                                                {
+                                                                                    obj1.InsertData_Section_A(cb_nationality.Text, dtp_dob.Text, txt_fname.Text, txt_lname.Text, txt_ic_pass.Text, cb_stud_ic_or_pass.Text, a, txt_house_address.Text, txt_contact_number.Text, txt_email.Text, cb_gender.Text);
+                                                                                    this.Hide();
+                                                                                    frm_Student_Registration__Section_B_ secondForm = new frm_Student_Registration__Section_B_();
+                                                                                    secondForm.stud_ID = stud_ID;
+                                                                                    secondForm.Show();
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    c = 0;
+                                                                                }
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                MessageBox.Show("Please select an option", "IC/Passport Selection");
+                                                                                return;
+                                                                            }
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            MessageBox.Show("Please select an option", "Nationality Selection");
+                                                                            return;
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        MessageBox.Show("Please select an option", "Gender Selection");
+                                                                        return;
                                                                     }
                                                                 }
                                                                 else
                                                                 {
-                                                                    MessageBox.Show("Please select an option", "IC/Passport Selection");
-                                                                    return;
+                                                                    MessageBox.Show("IC/Passport number should be less than 11 characters", "IC/Passport Number");
                                                                 }
                                                             }
                                                             else
                                                             {
-                                                                MessageBox.Show("Please select an option", "Nationality Selection");
-                                                                return;
+                                                                MessageBox.Show("Please enter a valid Malaysian phone number (01X-XXXXXXX or 01X-XXXXXXXX)", "Contact Number");
+                                                                txt_contact_number.Focus();
                                                             }
                                                         }
                                                         else
                                                         {
-                                                            MessageBox.Show("Please select an option", "Gender Selection");
-                                                            return;
+                                                            MessageBox.Show("Please enter a valid contact number", "Contact Number");
+                                                            txt_contact_number.Focus();
                                                         }
                                                     }
                                                     else
                                                     {
-                                                        MessageBox.Show("IC/Passport number should be less than 11 characters", "IC/Passport Number");
+                                                        MessageBox.Show("Contact number should be less than 12 characters", "Contact Number");
+                                                        return;
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    MessageBox.Show("Contact number should be less than 21 characters", "Contact Number");
+                                                    MessageBox.Show("Student ID should be less than 11 characters", "Student ID");
                                                     return;
                                                 }
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Student ID should be less than 11 characters", "Student ID");
+                                                MessageBox.Show("House address should be less than 101 characters", "House Address");
                                                 return;
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("House address should be less than 101 characters", "House Address");
-                                            return;
+                                            MessageBox.Show("Please enter a valid email address", "Email");
+                                            txt_email.Focus();
                                         }
                                     }
                                     else
@@ -268,20 +286,19 @@ namespace Group2_Assignment
                         }
                         else
                         {
-                            MessageBox.Show("Input contains invalid characters.", "Last Name");
+                            MessageBox.Show("Input contains invalid characters", "Last Name");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Input contains invalid characters.", "First Name");
+                        MessageBox.Show("Input contains invalid characters", "First Name");
                     }
-
                 }
             }
         }
 
         private void btn_cancel_Click_1(object sender, EventArgs e)
-        {
+        { 
             string b = stud_ID;
             Delete_Student obj1 = new Delete_Student(stud_ID);
             b = obj1.find_student_id_delete(stud_ID);

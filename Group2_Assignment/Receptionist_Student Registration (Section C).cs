@@ -129,6 +129,10 @@ namespace Group2_Assignment
                     secondForm.stud_ID = stud_ID;
                     secondForm.ShowDialog();
                 }
+                else
+                {
+                    c = 0;
+                }
             }
             else
             {

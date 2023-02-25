@@ -13,7 +13,7 @@ namespace Group2_Assignment
 {
     public partial class frm_Main_Menu : Form
     {
-        public string stud_id { get; set; }
+        public string r_id { get; set; }
         public static string id;
         public frm_Main_Menu()
         {
@@ -60,10 +60,10 @@ namespace Group2_Assignment
 
         private void btn_update_profile_Click(object sender, EventArgs e)
         {
-            stud_id = id;
+            r_id = id;
             this.Hide();
             frm_update_profile sevenForm = new frm_update_profile();
-            sevenForm.stud_ID = stud_id;
+            sevenForm.r_ID = r_id;
             sevenForm.Show();
         }
 
@@ -109,6 +109,30 @@ namespace Group2_Assignment
             this.Hide();
             LoginPage nineForm = new LoginPage();
             nineForm.Show();
+        }
+
+        private void btnTheme_Click(object sender, EventArgs e)
+        {
+            Theme twelveForm = new Theme();
+            twelveForm.Show();
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            r_id = id;
+            this.Hide();
+            frm_Receptionist_Change_Password elevenForm = new frm_Receptionist_Change_Password();
+            elevenForm.r_id = r_id;
+            elevenForm.Show();
+        }
+
+        private void btnUpdateSecurityQuestions_Click(object sender, EventArgs e)
+        {
+            r_id = id;
+            this.Hide();
+            frm_Receptionist_Security_Questions tenForm = new frm_Receptionist_Security_Questions();
+            tenForm.r_id = r_id;
+            tenForm.Show();
         }
     }
 }
