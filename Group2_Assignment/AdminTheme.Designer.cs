@@ -99,6 +99,7 @@ namespace Group2_Assignment
             this.radAuto.TabStop = true;
             this.radAuto.Text = "Auto (Default)";
             this.radAuto.UseVisualStyleBackColor = true;
+            this.radAuto.CheckedChanged += new System.EventHandler(this.radAuto_CheckedChanged_1);
             // 
             // lblHeader
             // 
@@ -121,6 +122,7 @@ namespace Group2_Assignment
             this.radLight.TabStop = true;
             this.radLight.Text = "Light";
             this.radLight.UseVisualStyleBackColor = true;
+            this.radLight.CheckedChanged += new System.EventHandler(this.radLight_CheckedChanged_1);
             // 
             // radBlack
             // 
@@ -132,8 +134,9 @@ namespace Group2_Assignment
             this.radBlack.TabStop = true;
             this.radBlack.Text = "Black";
             this.radBlack.UseVisualStyleBackColor = true;
+            this.radBlack.CheckedChanged += new System.EventHandler(this.radBlack_CheckedChanged_1);
             // 
-            // Theme
+            // AdminTheme
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(251)))), ((int)(((byte)(233)))));
@@ -145,9 +148,10 @@ namespace Group2_Assignment
             this.Controls.Add(this.panelTutor);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Theme";
+            this.Name = "AdminTheme";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Theme";
+            this.Load += new System.EventHandler(this.AdminTheme_Load);
             this.panelTutor.ResumeLayout(false);
             this.panelTutor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();

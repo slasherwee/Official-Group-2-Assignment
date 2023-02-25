@@ -24,5 +24,44 @@ namespace Group2_Assignment
             tp.ShowDialog();
         }
 
+        private void radAuto_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (radAuto.Checked)
+            {
+                this.BackColor = Color.FromArgb(254, 251, 233);
+            }
+        }
+
+        private void radLight_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (radLight.Checked)
+            {
+                this.BackColor = SystemColors.ControlLightLight;
+            }
+        }
+
+        private void radBlack_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (radBlack.Checked)
+            {
+                this.BackColor = SystemColors.ControlDarkDark;
+            }
+        }
+
+        private void AdminTheme_Load(object sender, EventArgs e)
+        {
+            if (this.BackColor == SystemColors.ControlDarkDark)
+            {
+                radBlack.Checked = true;
+            }
+            else if (this.BackColor == SystemColors.ControlLightLight)
+            {
+                radLight.Checked = true;
+            }
+            else if (this.BackColor == Color.FromArgb(254, 251, 233))
+            {
+                radAuto.Checked = true;
+            }
+        }
     }
 }

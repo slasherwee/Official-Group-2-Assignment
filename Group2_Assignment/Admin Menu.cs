@@ -16,6 +16,8 @@ namespace Group2_Assignment
     {
         private bool isCollapsed = true;
         public static string UserID; //global
+        public static string id;//global
+        private Color _formColor;
 
         public frmAdminMenu()
         {
@@ -27,11 +29,18 @@ namespace Group2_Assignment
             InitializeComponent();
             UserID = id;
         }
+        
+        public frmAdminMenu(Color formColor)
+        {
+            InitializeComponent();
+            _formColor = formColor;
+        }
 
         private void frmAdminMenu_Load(object sender, EventArgs e)
         {
             lblUsername.Text = "Hello, " + UserID;
             panelSetting.Size = panelSetting.MinimumSize;
+            this.BackColor = _formColor;
         }
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
@@ -132,7 +141,8 @@ namespace Group2_Assignment
             lp.ShowDialog();
         }
 
-        private void btnTheme_Click(object sender, EventArgs e)
+
+        private void btnTheme_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             AdminTheme theme = new AdminTheme();
