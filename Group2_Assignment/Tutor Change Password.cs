@@ -14,6 +14,7 @@ namespace Group2_Assignment
     public partial class Tutor_Change_Password : Form
     {
         public static string id;//global
+        private Color _formColor;
         private bool isCurrentPassVisible = false;
         private bool isNewPassVisible = false;
         private bool isConfirmPassVisible = false;
@@ -23,22 +24,24 @@ namespace Group2_Assignment
             InitializeComponent();
         }
 
-        public Tutor_Change_Password(string i)
+        public Tutor_Change_Password(string i, Color formColor)
         {
             InitializeComponent();
             id = i;
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Portal tp = new Tutor_Portal();
+            Tutor_Portal tp = new Tutor_Portal(this.BackColor);
             tp.ShowDialog();
         }
 
 
         private void Tutor_Change_Password_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
             Tutor obj1 = new Tutor(id);
             Tutor.viewPassword(obj1);
             txtCurrentPass.Text = obj1.Tutor_pass;

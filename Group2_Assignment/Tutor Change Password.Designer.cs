@@ -65,7 +65,7 @@
             this.panelTutor.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTutor.Location = new System.Drawing.Point(0, 0);
             this.panelTutor.Name = "panelTutor";
-            this.panelTutor.Size = new System.Drawing.Size(982, 102);
+            this.panelTutor.Size = new System.Drawing.Size(982, 117);
             this.panelTutor.TabIndex = 3;
             // 
             // pbPassword
@@ -74,7 +74,7 @@
             this.pbPassword.Image = ((System.Drawing.Image)(resources.GetObject("pbPassword.Image")));
             this.pbPassword.Location = new System.Drawing.Point(249, 38);
             this.pbPassword.Name = "pbPassword";
-            this.pbPassword.Size = new System.Drawing.Size(60, 38);
+            this.pbPassword.Size = new System.Drawing.Size(75, 52);
             this.pbPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPassword.TabIndex = 8;
             this.pbPassword.TabStop = false;
@@ -94,10 +94,10 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.Location = new System.Drawing.Point(337, 34);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(348, 45);
+            this.lblTitle.Size = new System.Drawing.Size(389, 50);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "CHANGE PASSWORD";
             // 
@@ -120,27 +120,30 @@
             // lblConfirmPass
             // 
             this.lblConfirmPass.AutoSize = true;
+            this.lblConfirmPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblConfirmPass.Location = new System.Drawing.Point(203, 367);
             this.lblConfirmPass.Name = "lblConfirmPass";
-            this.lblConfirmPass.Size = new System.Drawing.Size(177, 28);
+            this.lblConfirmPass.Size = new System.Drawing.Size(187, 28);
             this.lblConfirmPass.TabIndex = 15;
             this.lblConfirmPass.Text = "Confirm Password :";
             // 
             // lblNewPass
             // 
             this.lblNewPass.AutoSize = true;
+            this.lblNewPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNewPass.Location = new System.Drawing.Point(234, 294);
             this.lblNewPass.Name = "lblNewPass";
-            this.lblNewPass.Size = new System.Drawing.Size(146, 28);
+            this.lblNewPass.Size = new System.Drawing.Size(155, 28);
             this.lblNewPass.TabIndex = 14;
             this.lblNewPass.Text = "New Password :";
             // 
             // lblCurrentPass
             // 
             this.lblCurrentPass.AutoSize = true;
+            this.lblCurrentPass.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCurrentPass.Location = new System.Drawing.Point(209, 221);
             this.lblCurrentPass.Name = "lblCurrentPass";
-            this.lblCurrentPass.Size = new System.Drawing.Size(177, 28);
+            this.lblCurrentPass.Size = new System.Drawing.Size(188, 28);
             this.lblCurrentPass.TabIndex = 13;
             this.lblCurrentPass.Text = "Current Password : ";
             // 
@@ -272,7 +275,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tutor_Change_Password";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tutor_Change_Password";
+            this.Text = "Tutor Change Password";
             this.Load += new System.EventHandler(this.Tutor_Change_Password_Load);
             this.panelTutor.ResumeLayout(false);
             this.panelTutor.PerformLayout();

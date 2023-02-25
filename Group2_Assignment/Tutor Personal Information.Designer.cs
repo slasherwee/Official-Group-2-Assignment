@@ -256,7 +256,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tutor_Personal_Information";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tutor_Personal_Information";
+            this.Text = "Tutor Personal Information";
             this.Load += new System.EventHandler(this.Tutor_Personal_Information_Load);
             this.panelTutor.ResumeLayout(false);
             this.panelTutor.PerformLayout();

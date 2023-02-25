@@ -13,21 +13,23 @@ namespace Group2_Assignment
     public partial class Tutor_View_Student_Enrolled : Form
     {
         public static string id;//global
+        private Color _formColor;
         public Tutor_View_Student_Enrolled()
         {
             InitializeComponent();
         }
 
-        public Tutor_View_Student_Enrolled(string a)
+        public Tutor_View_Student_Enrolled(string a, Color formColor)
         {
             InitializeComponent();
             id = a;
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tutor_Portal tp = new Tutor_Portal();
+            Tutor_Portal tp = new Tutor_Portal(this.BackColor);
             tp.ShowDialog();
         }
 
@@ -41,6 +43,7 @@ namespace Group2_Assignment
 
         private void Tutor_View_Student_Enrolled_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
             Tutor obj1 = new Tutor(id);
 
             DataTable dt = obj1.viewSubject(obj1);

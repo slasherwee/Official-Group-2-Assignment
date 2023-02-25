@@ -55,16 +55,16 @@
             this.panelTutor.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTutor.Location = new System.Drawing.Point(0, 0);
             this.panelTutor.Name = "panelTutor";
-            this.panelTutor.Size = new System.Drawing.Size(982, 102);
+            this.panelTutor.Size = new System.Drawing.Size(982, 117);
             this.panelTutor.TabIndex = 4;
             // 
             // pbPassword
             // 
             this.pbPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.pbPassword.Image = ((System.Drawing.Image)(resources.GetObject("pbPassword.Image")));
-            this.pbPassword.Location = new System.Drawing.Point(249, 38);
+            this.pbPassword.Location = new System.Drawing.Point(226, 34);
             this.pbPassword.Name = "pbPassword";
-            this.pbPassword.Size = new System.Drawing.Size(60, 38);
+            this.pbPassword.Size = new System.Drawing.Size(75, 52);
             this.pbPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPassword.TabIndex = 8;
             this.pbPassword.TabStop = false;
@@ -84,10 +84,10 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(337, 34);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(307, 34);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(503, 45);
+            this.lblTitle.Size = new System.Drawing.Size(563, 50);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "UPDATE SECURITY QUESTIONS";
             // 
@@ -108,7 +108,7 @@
             // 
             this.txtSecAns.Location = new System.Drawing.Point(399, 434);
             this.txtSecAns.Name = "txtSecAns";
-            this.txtSecAns.Size = new System.Drawing.Size(331, 34);
+            this.txtSecAns.Size = new System.Drawing.Size(343, 34);
             this.txtSecAns.TabIndex = 25;
             // 
             // txtSecQues
@@ -116,41 +116,44 @@
             this.txtSecQues.Location = new System.Drawing.Point(399, 361);
             this.txtSecQues.Name = "txtSecQues";
             this.txtSecQues.ReadOnly = true;
-            this.txtSecQues.Size = new System.Drawing.Size(331, 34);
+            this.txtSecQues.Size = new System.Drawing.Size(343, 34);
             this.txtSecQues.TabIndex = 24;
-            this.txtSecQues.Text = "What is the name of your best friend?\r\n";
+            this.txtSecQues.Text = "What is the name of your best friend ?\r\n";
             // 
             // txtFAns
             // 
             this.txtFAns.Location = new System.Drawing.Point(399, 289);
             this.txtFAns.Name = "txtFAns";
-            this.txtFAns.Size = new System.Drawing.Size(331, 34);
+            this.txtFAns.Size = new System.Drawing.Size(343, 34);
             this.txtFAns.TabIndex = 23;
             // 
             // lblSecAns
             // 
             this.lblSecAns.AutoSize = true;
+            this.lblSecAns.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSecAns.Location = new System.Drawing.Point(226, 434);
             this.lblSecAns.Name = "lblSecAns";
-            this.lblSecAns.Size = new System.Drawing.Size(154, 28);
+            this.lblSecAns.Size = new System.Drawing.Size(163, 28);
             this.lblSecAns.TabIndex = 22;
             this.lblSecAns.Text = "Second Answer :";
             // 
             // lblSecQues
             // 
             this.lblSecQues.AutoSize = true;
+            this.lblSecQues.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSecQues.Location = new System.Drawing.Point(210, 361);
             this.lblSecQues.Name = "lblSecQues";
-            this.lblSecQues.Size = new System.Drawing.Size(170, 28);
+            this.lblSecQues.Size = new System.Drawing.Size(179, 28);
             this.lblSecQues.TabIndex = 21;
             this.lblSecQues.Text = "Second Question :";
             // 
             // lblFAns
             // 
             this.lblFAns.AutoSize = true;
+            this.lblFAns.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblFAns.Location = new System.Drawing.Point(255, 292);
             this.lblFAns.Name = "lblFAns";
-            this.lblFAns.Size = new System.Drawing.Size(131, 28);
+            this.lblFAns.Size = new System.Drawing.Size(140, 28);
             this.lblFAns.TabIndex = 20;
             this.lblFAns.Text = "First Answer : ";
             // 
@@ -159,16 +162,17 @@
             this.txtFQues.Location = new System.Drawing.Point(399, 226);
             this.txtFQues.Name = "txtFQues";
             this.txtFQues.ReadOnly = true;
-            this.txtFQues.Size = new System.Drawing.Size(331, 34);
+            this.txtFQues.Size = new System.Drawing.Size(343, 34);
             this.txtFQues.TabIndex = 28;
-            this.txtFQues.Text = "What was your childhood nickname?";
+            this.txtFQues.Text = "What was your childhood nickname ?";
             // 
             // lblFQues
             // 
             this.lblFQues.AutoSize = true;
+            this.lblFQues.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblFQues.Location = new System.Drawing.Point(240, 226);
             this.lblFQues.Name = "lblFQues";
-            this.lblFQues.Size = new System.Drawing.Size(147, 28);
+            this.lblFQues.Size = new System.Drawing.Size(156, 28);
             this.lblFQues.TabIndex = 27;
             this.lblFQues.Text = "First Question : ";
             // 
