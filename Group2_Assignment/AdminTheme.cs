@@ -20,8 +20,8 @@ namespace Group2_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmAdminMenu tp = new frmAdminMenu();
-            tp.ShowDialog();
+            frmAdminMenu am = new frmAdminMenu(this.BackColor);
+            am.ShowDialog();
         }
 
         private void radAuto_CheckedChanged_1(object sender, EventArgs e)

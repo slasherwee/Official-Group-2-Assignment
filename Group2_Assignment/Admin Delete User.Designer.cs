@@ -187,6 +187,7 @@
             this.Name = "frmAdminDeleteUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete User";
+            this.Load += new System.EventHandler(this.frmAdminDeleteUser_Load);
             this.pnlRegistration.ResumeLayout(false);
             this.pnlRegistration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
