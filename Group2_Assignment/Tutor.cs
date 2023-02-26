@@ -40,31 +40,18 @@ namespace Group2_Assignment
         //Initialize a static SqlConnection object named con with the connection string from the configuration file. 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
-
+        //get and set accessor
         public string FName
         { get => fName; set => fName = value; }
-
-
         public string LName { get => lName; set => lName = value; }
-
-
         public string Location { get => location; set => location = value; }
-
         public string Email { get => email; set => email = value; }
-
         public string Contactno { get => contactno; set => contactno = value; }
-
         public string SubID { get => subID; set => subID = value; }
-
         public string SubName { get => subName; set => subName = value; }
-
-
         public string SubHour { get => subHour; set => subHour = value; }
-
         public string SubCharges { get => subCharges; set => subCharges = value; }
         public string Day { get => day; set => day = value; }
-        public string ClassLocation { get => classLocation; set => classLocation = value; }
-        public string Time { get => time; set => time = value; }
         public string TeachingEx { get => teachingEx; set => teachingEx = value; }
         public string Tutor_pass { get => tutor_pass; set => tutor_pass = value; }
         public string Ans_q1 { get => ans_q1; set => ans_q1 = value; }
