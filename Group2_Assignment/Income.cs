@@ -88,7 +88,8 @@ namespace Group2_Assignment
         public DataTable ViewIncomeReportSortMonthYear(int Month, int Year)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select receipt_no, student_id, payment_date, payment_method payment_total  from RECEIPT_T WHERE MONTH(payment_date) = @m AND YEAR(payment_date) = @y", con);
+            SqlCommand cmd = new SqlCommand("select receipt_no, student_id, payment_date, payment_method payment_total  from RECEIPT_T " +
+                "WHERE MONTH(payment_date) = @m AND YEAR(payment_date) = @y", con);
             cmd.Parameters.AddWithValue("@m", Month);
             cmd.Parameters.AddWithValue("@y", Year);
             //Creating a DataTable 

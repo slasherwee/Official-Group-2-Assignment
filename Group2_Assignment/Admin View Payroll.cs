@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,10 @@ namespace Group2_Assignment
         public static string userid;
         private Color _formColor;
 
-        public frmAdminViewPayroll(Color formColor)
+        public frmAdminViewPayroll(Color formColor, string id)
         {
             InitializeComponent();
+            userid = id;
             _formColor = formColor;
         }
 

@@ -14,16 +14,12 @@ namespace Group2_Assignment
 {
     public partial class frmAdminMenu : Form
     {
-        private bool isCollapsed = true;
+        //member field
+        private bool isCollapsed = true; //boolean variable to keep track of the collapse state of a panel
         public static string UserID; //global
+        private Color _formColor;//private variable to store the color of the form
 
-        private Color _formColor;
-
-        public frmAdminMenu()
-        {
-            InitializeComponent();
-        }
-
+        //constructor
         public frmAdminMenu(string id)
         {
             InitializeComponent();
@@ -34,17 +30,12 @@ namespace Group2_Assignment
         public frmAdminMenu(Color formColor)
         {
             InitializeComponent();
+            // store the passed form color in the private variable
             _formColor = formColor;
         }
 
-        public frmAdminMenu(string id,Color formColor)
-        {
-            InitializeComponent();
-            _formColor = formColor;
-            UserID = id;
-        }
 
-
+        //delegated the event for the Admin Menu form 
         private void frmAdminMenu_Load(object sender, EventArgs e)
         {
             lblUsername.Text = "Hello, " + UserID;
@@ -77,7 +68,7 @@ namespace Group2_Assignment
             //Hide the current form
             this.Hide();
             //create object for frmViewPayroll
-            frmAdminViewPayroll avp = new frmAdminViewPayroll(_formColor);
+            frmAdminViewPayroll avp = new frmAdminViewPayroll(_formColor, UserID);
             avp.ShowDialog();
         }
 

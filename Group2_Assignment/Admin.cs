@@ -180,8 +180,8 @@ namespace Group2_Assignment
             // Open Connection
             con.Open();
             //SqlCommand objectName = new Constructor(sqlQuery, connectionString);
-            SqlCommand cmd = new SqlCommand("insert into RECEPTIONIST_T (receptionist_id, receptionist_fname, receptionist_lname, receptionist_gender, receptionist_DOB, receptionist_working_exp, receptionist_office_location, receptionist_email, receptionist_contact_no) " +
-                "values (@id, @f, @l, @g, @dob, @exp, @ofl, @em, @num)", con);
+            SqlCommand cmd = new SqlCommand("insert into RECEPTIONIST_T (receptionist_id, receptionist_fname, receptionist_lname, receptionist_gender, receptionist_DOB," +
+                " receptionist_working_exp, receptionist_office_location, receptionist_email, receptionist_contact_no) values (@id, @f, @l, @g, @dob, @exp, @ofl, @em, @num)", con);
             SqlCommand cmd2 = new SqlCommand("insert into USER_T (id, password, role, ans_Q1, ans_Q2) values (@id, @pass, @role, @question1, @question2)", con);
             cmd.Parameters.AddWithValue("@id", UserID);
             cmd2.Parameters.AddWithValue("@id", UserID);
@@ -304,7 +304,8 @@ namespace Group2_Assignment
             Exp = exp;
             officeLocation = ofl;
 
-            SqlCommand cmd = new SqlCommand("update ADMIN_T set admin_fname = @f, admin_lname = @l, admin_working_exp = @exp, admin_office_location = @ofl, admin_email = @em, admin_contact_no = @num where admin_id= @id", con);
+            SqlCommand cmd = new SqlCommand("update ADMIN_T set admin_fname = @f, admin_lname = @l, admin_working_exp = @exp, admin_office_location = @ofl, " +
+                "admin_email = @em, admin_contact_no = @num where admin_id= @id", con);
             cmd.Parameters.AddWithValue("@f", fname);
             cmd.Parameters.AddWithValue("@l", lname);
             cmd.Parameters.AddWithValue("@exp", Exp);
