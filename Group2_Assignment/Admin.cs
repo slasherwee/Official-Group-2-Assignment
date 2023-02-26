@@ -52,13 +52,13 @@ namespace Group2_Assignment
 
 
         //constructor
+        public Admin()
+        { }
+
         public Admin(string id)
         {
             UserID = id;
         }
-
-        public Admin()
-        { }
 
         public Admin(string id, string R, string P, string SQ1, string SQ2)
         {
@@ -108,7 +108,9 @@ namespace Group2_Assignment
         public string AddTutor()
         {
             string status;
+            //connection open
             con.Open();
+            //SqlCommand objectName = new Constructor(sqlQuery, connectionString);
             SqlCommand cmd = new SqlCommand("insert into TUTOR_T (tutor_id, fname, lname, contact_no, email, gender, dob, teachingEx, officeLocation, sub_id) " +
                 "values (@id, @f, @l, @num, @em, @g, @dob, @exp, @ofl, @sub)", con);
 
@@ -122,7 +124,9 @@ namespace Group2_Assignment
             cmd.Parameters.AddWithValue("@sub", subject);
             cmd.Parameters.AddWithValue("@exp", int.Parse(Exp));
             cmd.Parameters.AddWithValue("@ofl", officeLocation);
-            
+
+            //read from database
+            //retrieve value from database
             int x = cmd.ExecuteNonQuery();
             if (x != 0)
             {
@@ -132,15 +136,20 @@ namespace Group2_Assignment
             {
                 status = "Unable to register";
             }
+            //close connection
             con.Close();
             return status;
         }
-    
 
+        //Add Tutor to the user table method
+        //has return value
+        //no parameters
         public string AddTutortoUser()
         {
             string status;
+            //open connection
             con.Open();
+            //SqlCommand objectName = new Constructor(sqlQuery, connectionString);
             SqlCommand cmd2 = new SqlCommand("insert into USER_T (id, password, role, ans_Q1, ans_Q2) values (@id, @pass, @role, @question1, @question2)", con);
             cmd2.Parameters.AddWithValue("@id", UserID);
             cmd2.Parameters.AddWithValue("@pass", password);
@@ -157,6 +166,7 @@ namespace Group2_Assignment
             {
                 status = " ";
             }
+            //close connection
             con.Close();
             return status;
         }
@@ -167,7 +177,9 @@ namespace Group2_Assignment
         public string AddReceptionist()
         {
             string status;
+            // Open Connection
             con.Open();
+            //SqlCommand objectName = new Constructor(sqlQuery, connectionString);
             SqlCommand cmd = new SqlCommand("insert into RECEPTIONIST_T (receptionist_id, receptionist_fname, receptionist_lname, receptionist_gender, receptionist_DOB, receptionist_working_exp, receptionist_office_location, receptionist_email, receptionist_contact_no) " +
                 "values (@id, @f, @l, @g, @dob, @exp, @ofl, @em, @num)", con);
             SqlCommand cmd2 = new SqlCommand("insert into USER_T (id, password, role, ans_Q1, ans_Q2) values (@id, @pass, @role, @question1, @question2)", con);
@@ -209,6 +221,7 @@ namespace Group2_Assignment
         {
             // Open Connection
             con.Open();
+            //SqlCommand objectName = new Constructor(sqlQuery, connectionString);
             SqlCommand command = new SqlCommand("select count(tutor_id) from TUTOR_T", con);
             int i = Convert.ToInt32(command.ExecuteScalar().ToString());
             int count = i + 1;
@@ -227,10 +240,14 @@ namespace Group2_Assignment
             con.Close();
         }
 
+        //Create New ReceptionistID method
+        //Has a parameters
+        //No return value
         public static void CreateNewReceptionistID(Admin o1)
         {
             // Open Connection
             con.Open();
+            //SqlCommand objectName = new Constructor(sqlQuery, connectionString);
             SqlCommand command = new SqlCommand("select count(receptionist_id) from RECEPTIONIST_T", con);
             int i = Convert.ToInt32(command.ExecuteScalar().ToString());
             int count = i + 1;
@@ -255,6 +272,7 @@ namespace Group2_Assignment
         //Has a parameters
         public static void ViewProfile(Admin o1)
         {
+            // Open Connection
             con.Open();
             //SqlCommand objectName = new Constructor(sqlQuery, connectionString);
             SqlCommand cmd = new SqlCommand("select * from ADMIN_T where admin_id = '" + o1.UserID + "'", con);
@@ -273,6 +291,8 @@ namespace Group2_Assignment
         }
 
         //Update Profile method
+        //has parameters
+        //has return value
         public string UpdateProfile(string f, string l, string em, string num, string exp, string ofl)
         {
             string status;
@@ -306,6 +326,10 @@ namespace Group2_Assignment
             return status;
         }
 
+        //View Password method
+        //has parameters
+        //<param name = "o1" ></ param >
+        /// no return value
         public static void ViewPassword(Admin o1)
         {
             con.Open();
@@ -318,7 +342,9 @@ namespace Group2_Assignment
             con.Close();
         }
 
-
+        //View Password method
+        //has parameters
+        //has return value
         public string UpdatePassword(string pw)
         {
             string status;
@@ -340,6 +366,10 @@ namespace Group2_Assignment
             return status;
         }
 
+        //viewSecurityQuestion method
+        //has parameters
+        /// <param name="o1"></param>
+        /// no return value
         public static void viewSecurityQuestion(Admin o1)
         {
             con.Open();
@@ -357,6 +387,9 @@ namespace Group2_Assignment
             con.Close();
         }
 
+        //updateAns method
+        //has return value
+        //has paramaters
         public string updateAns(string a, string b, string c)
         {
             string status;
@@ -381,6 +414,8 @@ namespace Group2_Assignment
             return status;
         }
 
+        //get TutorID method
+        //has return value
         public static ArrayList TutorID()
         {
             ArrayList nm = new ArrayList();
@@ -395,6 +430,8 @@ namespace Group2_Assignment
             return nm;
         }
 
+        //Get ReceptionistID
+        //has return value
         public static ArrayList ReceptionistID()
         {
             ArrayList nm = new ArrayList();
@@ -409,8 +446,9 @@ namespace Group2_Assignment
             return nm;
         }
 
-
-        public  DataTable ViewTutorForDelete()
+        //ViewTutorForDelete method
+        //has return value
+        public DataTable ViewTutorForDelete()
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from TUTOR_T ", con);
@@ -425,7 +463,9 @@ namespace Group2_Assignment
             return dt;
         }
 
-        public  DataTable ViewReceptionistForDelete()
+        // ViewReceptionistForDelete method
+        //has return value
+        public DataTable ViewReceptionistForDelete()
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from RECEPTIONIST_T", con);
@@ -439,6 +479,8 @@ namespace Group2_Assignment
             return dt;
         }
 
+        // deleteTutor method
+        //has return value
         public string deleteTutor(Admin o1)
         {
             string status;
@@ -460,6 +502,9 @@ namespace Group2_Assignment
             return status;
         }
 
+        // deleteReceptionist method
+        //has return value
+        //has parameters
         public string deleteReceptionist(Admin o1)
         {
             string status;

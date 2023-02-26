@@ -18,6 +18,7 @@ namespace Group2_Assignment
         private int Month;
         private int Year;
 
+        //constructor
         public Income()
         {
         }
@@ -33,7 +34,7 @@ namespace Group2_Assignment
             Year = y;
         }
 
-
+        //Establish connection
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
         public string TotalIncome1 { get => TotalIncome; set => TotalIncome = value; }

@@ -14,10 +14,7 @@ namespace Group2_Assignment
     {
         public static string UserID;
         private Color _formColor;
-        public frmAdminSecurityQuestions()
-        {
-            InitializeComponent();
-        }
+
         public frmAdminSecurityQuestions(string id, Color formColor)
         {
             InitializeComponent();
