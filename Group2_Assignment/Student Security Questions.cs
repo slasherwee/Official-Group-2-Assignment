@@ -54,6 +54,7 @@ namespace Group2_Assignment
 
         private void Student_Security_Questions_Load(object sender, EventArgs e)
         {
+            txtFAns.Focus();
             Student obj1 = new Student(id);
             Student.viewSecurityQuestion(obj1);
             txtFAns.Text = obj1.Ans_q1;

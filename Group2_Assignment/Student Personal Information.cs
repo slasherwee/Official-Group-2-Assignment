@@ -35,6 +35,7 @@ namespace Group2_Assignment
 
         private void Student_Personal_Information_Load(object sender, EventArgs e)
         {
+            txtFName.Focus();
             lblStudId.Text = id;
             Student obj1 = new Student(id);
             //call static method viewProfile by supplying the object

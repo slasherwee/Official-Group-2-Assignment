@@ -42,6 +42,7 @@ namespace Group2_Assignment
             Student.viewPassword(obj1);
             txtCurrentPass.Text = obj1.Password;
             txtCurrentPass.ReadOnly = true;
+            txtCurrentPass.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

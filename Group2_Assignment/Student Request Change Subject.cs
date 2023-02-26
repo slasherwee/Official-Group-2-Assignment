@@ -37,6 +37,7 @@ namespace Group2_Assignment
 
         private void Student_Request_Change_Subject_Load(object sender, EventArgs e)
         {
+            btnSendReq.Focus();
             Student obj1 = new Student(id);
             lblDateOutput.Text = DateTime.Now.ToString("MM-dd-yyyy");
             obj1.viewAllSubID();

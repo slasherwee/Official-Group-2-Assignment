@@ -34,6 +34,7 @@ namespace Group2_Assignment
 
         private void Student_View_Change_Subject_Status_Load(object sender, EventArgs e)
         {
+            txtRequestID.Focus();
             Student obj1 = new Student(id);
             DataTable vrs = obj1.viewRequestStatus(obj1);
             dgvRequestStatus.DataSource = vrs;
