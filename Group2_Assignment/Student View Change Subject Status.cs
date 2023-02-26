@@ -47,10 +47,13 @@ namespace Group2_Assignment
             }
             else
             {
-                Student obj1 = new Student(id, txtRequestID.Text);
-                MessageBox.Show(obj1.deleteRequest());
-                DataTable vrs = obj1.viewRequestStatus(obj1);
-                dgvRequestStatus.DataSource = vrs;
+                if (MessageBox.Show("Do you want to delete your request?", "Delete Pending Request", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Student obj1 = new Student(id, txtRequestID.Text);
+                    MessageBox.Show(obj1.deleteRequest());
+                    DataTable vrs = obj1.viewRequestStatus(obj1);
+                    dgvRequestStatus.DataSource = vrs;
+                }
             }
         }
 
