@@ -237,7 +237,7 @@ namespace Group2_Assignment
         {
             DataTable vrs = new DataTable();
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT request_id, request_date, current_sub_id, current_sub_name, current_tutor, new_sub_id, new_sub_name, new_tutor, request_status FROM REQUEST_T WHERE student_id = @a", con);
+            SqlCommand cmd = new SqlCommand("SELECT request_id AS \"Request ID\", request_date AS \"Date\", current_sub_id AS \"Current Sub ID\", current_sub_name AS \"Current Sub Name\", current_tutor AS \"Current Tutor\", new_sub_id AS \"New Sub ID\", new_sub_name AS \"New Sub Name\", new_tutor AS \"New Tutor\", request_status AS \"Status\" FROM REQUEST_T WHERE student_id = @a", con);
             cmd.Parameters.AddWithValue("@a", studId);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(vrs);
