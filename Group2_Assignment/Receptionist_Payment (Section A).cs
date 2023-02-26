@@ -105,7 +105,7 @@ namespace Group2_Assignment
         {
             this.Hide();
             frm_Main_Menu secondForm = new frm_Main_Menu();
-            secondForm.Show();
+            secondForm.ShowDialog();
 
         }
     }

@@ -50,7 +50,7 @@ namespace Group2_Assignment
             this.Hide();
             frm_delete_student_page_4 firstForm = new frm_delete_student_page_4();
             firstForm.Stud_ID = Stud_ID;
-            firstForm.Show();
+            firstForm.ShowDialog();
         }
     }
 }

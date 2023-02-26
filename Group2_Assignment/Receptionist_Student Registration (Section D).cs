@@ -95,7 +95,7 @@ namespace Group2_Assignment
                     MessageBox.Show(stud_ID + " registration has been deleted ");
                     this.Hide();
                     frm_Main_Menu secondForm = new frm_Main_Menu();
-                    secondForm.Show();
+                    secondForm.ShowDialog();
                 }
             }
             else
@@ -103,7 +103,7 @@ namespace Group2_Assignment
                 MessageBox.Show("Registration Cancelled", "Alert");
                 this.Hide();
                 frm_Main_Menu thirdForm = new frm_Main_Menu();
-                thirdForm.Show();
+                thirdForm.ShowDialog();
             }
         }
 

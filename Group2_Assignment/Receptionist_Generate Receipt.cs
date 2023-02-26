@@ -54,14 +54,14 @@ namespace Group2_Assignment
         {
             this.Hide();
             frm_Main_Menu firstForm = new frm_Main_Menu();
-            firstForm.Show();
+            firstForm.ShowDialog();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             frm_Main_Menu secondForm = new frm_Main_Menu();
-            secondForm.Show();
+            secondForm.ShowDialog();
         }
 
         private void gb_receipt_Enter(object sender, EventArgs e)

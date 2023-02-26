@@ -21,7 +21,7 @@ namespace Group2_Assignment
         {
             this.Close();
             frm_update_subject_enrolment_page2 firstForm = new frm_update_subject_enrolment_page2();
-            firstForm.Show();
+            firstForm.ShowDialog();
         }
 
         private void frm_update_subject_enrolment_view_Load(object sender, EventArgs e)

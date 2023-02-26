@@ -71,7 +71,7 @@ namespace Group2_Assignment
         {
             this.Hide();
             frm_update_subject_enrolment_page2 secondForm = new frm_update_subject_enrolment_page2();
-            secondForm.Show();
+            secondForm.ShowDialog();
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace Group2_Assignment
         {
             this.Hide();
             frm_Main_Menu firstForm = new frm_Main_Menu();
-            firstForm.Show();
+            firstForm.ShowDialog();
         }
 
         private void grbDeleteRequest_Enter(object sender, EventArgs e)

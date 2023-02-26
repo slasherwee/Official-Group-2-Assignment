@@ -312,21 +312,21 @@ namespace Group2_Assignment
                     MessageBox.Show(stud_ID + " registration has been deleted ");
                     this.Hide();
                     frm_Main_Menu fifthForm = new frm_Main_Menu();
-                    fifthForm.Show();
+                    fifthForm.ShowDialog();
                 }
                 else
                 {
                     MessageBox.Show("Registration Cancelled", "Alert");
                     this.Hide();
                     frm_Main_Menu thirdForm = new frm_Main_Menu();
-                    thirdForm.Show();
+                    thirdForm.ShowDialog();
                 }
             }
             else
             {
                 this.Hide();
                 frm_Main_Menu forthForm = new frm_Main_Menu();
-                forthForm.Show();
+                forthForm.ShowDialog();
             }
         }
     }

@@ -34,7 +34,7 @@ namespace Group2_Assignment
         {
             this.Hide();
             frm_Main_Menu firstForm = new frm_Main_Menu();
-            firstForm.Show();
+            firstForm.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

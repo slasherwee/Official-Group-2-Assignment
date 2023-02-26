@@ -49,14 +49,14 @@ namespace Group2_Assignment
             this.Hide();
             frm_Delete_page_page_3 secondForm = new frm_Delete_page_page_3();
             secondForm.Stud_ID = Stud_ID;
-            secondForm.Show();
+            secondForm.ShowDialog();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             frm_Main_Menu thirdForm = new frm_Main_Menu();
-            thirdForm.Show();
+            thirdForm.ShowDialog();
         }
 
         private void gb_section_A_Enter(object sender, EventArgs e)

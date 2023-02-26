@@ -26,7 +26,7 @@ namespace Group2_Assignment
                 this.Hide();
                 frm_update_subject_enrolment_page3 firstForm = new frm_update_subject_enrolment_page3();
                 firstForm.Student_ID = txt_student_id.Text;
-                firstForm.Show();
+                firstForm.ShowDialog();
             }
         }
 
@@ -34,7 +34,7 @@ namespace Group2_Assignment
         {
             this.Hide();
             frm_update_subject_enrolment_page1 secondForm = new frm_update_subject_enrolment_page1();
-            secondForm.Show();
+            secondForm.ShowDialog();
         }
     }
 }

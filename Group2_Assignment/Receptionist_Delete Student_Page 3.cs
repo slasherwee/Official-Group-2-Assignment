@@ -52,7 +52,7 @@ namespace Group2_Assignment
             this.Hide();
             frm_delete_student_page_4 secondForm = new frm_delete_student_page_4();
             secondForm.Stud_ID = Stud_ID;
-            secondForm.Show();
+            secondForm.ShowDialog();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace Group2_Assignment
             this.Hide();
             frm_Delete_Student_Page_2 firstForm = new frm_Delete_Student_Page_2();
             firstForm.Stud_ID = Stud_ID;
-            firstForm.Show();
+            firstForm.ShowDialog();
         }
     }
 }
