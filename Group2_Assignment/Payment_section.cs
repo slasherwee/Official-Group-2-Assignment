@@ -15,8 +15,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Group2_Assignment
 {
+    // Declaring a class named Payment_section, which is internal (i.e., accessible within the same assembly)
     internal class Payment_section
     {
+        // Declaring private fields of the class
         private string subject_selected;
         private string calculate_total_amount;
         private string student_id;
@@ -26,8 +28,11 @@ namespace Group2_Assignment
         private string remarks;
         private string payment_total;
         private string receipt_no;
+
+        // Defining a static SqlConnection object to establish a connection with the database
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
+        // Defining public properties for the private fields of the class
         public string Subject_selected { get => subject_selected; set => subject_selected = value; }
         public string Calculate_total_amount { get => calculate_total_amount; set => calculate_total_amount = value; }
         public string Student_id { get => student_id; set => student_id = value; }
@@ -37,11 +42,14 @@ namespace Group2_Assignment
         public string Payment_total { get => payment_total; set => payment_total = value; }
         public string Receipt_no { get => receipt_no; set => receipt_no = value; }
 
+        // Defining a constructor with two parameters
         public Payment_section(string ss, string cta)
         {
             Subject_selected = ss;
             Calculate_total_amount = cta;
         }
+
+        // Defining a constructor with six parameters
         public Payment_section(string sid, string sname, string date, string pm, string remarks, string paytotal)
         {
             Student_id = sid;
@@ -51,6 +59,8 @@ namespace Group2_Assignment
             Remarks = remarks;
             Payment_total = paytotal;
         }
+
+        // Defining a constructor with one parameter
         public Payment_section(string sname)
         {
             student_name = sname;
@@ -218,29 +228,38 @@ namespace Group2_Assignment
             con.Close();
             return g;
         }
-
+        // This method takes a string parameter 'un' and returns a string.
         public string find_id_payment(string un)
         {
+            // Initialize a string variable 'receipt'.
             string receipt;
+            // Create a new SqlConnection object that connects to a database using the connection string
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
             {
                 try
                 {
+                    // Open the connection to the database
                     con.Open();
+                    // Create a new SqlCommand object that counts the number of rows in a table that match the provided parameter
                     SqlCommand cmd = new SqlCommand("select count(*)from STUDENT_T where student_id =@id", con);
                     {
+                        // Add a parameter to the SqlCommand object with a value of 'un'
                         cmd.Parameters.AddWithValue("@id", student_name);
+                        // Execute the SqlCommand object and convert the result to an integer
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
 
+                        // If the count is greater than 0, the student ID exists
                         if (count > 0)
                         {
                             receipt = "Student ID exist";
                         }
+                        // If the count is 0, the student ID does not exist
                         else
                         {
                             receipt = "Student ID does not exist";
                         }
                     }
+                    // Close the connection to the database
                     con.Close();
                 }
                 catch (Exception ex)
@@ -249,6 +268,7 @@ namespace Group2_Assignment
                     receipt = "An error occurred: " + ex.Message;
                 }
             }
+            // Return the result of the method (stored in 'receipt')
             return receipt;
         }
         public string find_receipt_no_payment(string un)

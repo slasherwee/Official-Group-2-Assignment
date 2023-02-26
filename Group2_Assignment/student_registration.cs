@@ -14,6 +14,7 @@ namespace Group2_Assignment
 {
     internal class student_registration
     {
+        // Declare private fields for student registration
         private string stud_fname;
         private string stud_lname;
         private string stud_Ic_or_pass_num;
@@ -54,9 +55,10 @@ namespace Group2_Assignment
         private string sub3;
         private string acc_stud_ID;
 
+        // Declare a static SqlConnection object to connect to the database
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
-
+        // Declare public properties for the private fields
         public string Student_id { get => student_id; set => student_id = value; }
         public string Activate_acc { get => activate_acc; set => activate_acc = value; }
         public string Account_type { get => account_type; set => account_type = value; }
@@ -93,6 +95,7 @@ namespace Group2_Assignment
 
         public student_registration(string a, string b, string c, string d, string e, string f, string g, string h, string i, string j, string k)
         {
+            // This constructor takes 11 parameters and initializes the student_registration object's fields with those values
             S_ID = a;
             Stud_email = b;
             Stud_contact_no = c;
@@ -108,11 +111,13 @@ namespace Group2_Assignment
 
         public student_registration(string d, string e)
         {
+            // This constructor takes 2 parameters and initializes the student_registration object's stud_fname and stud_lname fields with those values
             stud_fname = d;
             stud_lname = e;
         }
         public student_registration(string j, string k, string l, string m, string n, string o, string p, string q, string r, string s)
         {
+            // This constructor takes 10 parameters and initializes the student_registration object's fields related to the parent/guardian with those values
             pg_fname = j;
             pg_lname = k;
             Pg_contact_no = l;
@@ -126,12 +131,14 @@ namespace Group2_Assignment
         }
         public student_registration(string id, string ac, string ad)
         {
+            // This constructor takes 3 parameters and initializes the student_registration object's fields related to student id, account activation and student name with those values
             Student_id = id;
             Activate_acc = ac;
             student_name = ad;
         }
         public student_registration(string ad)
         {
+            // This constructor takes 1 parameter and initializes the student_registration object's student_name field with that value
             student_name = ad;
         }
                 
@@ -151,22 +158,40 @@ namespace Group2_Assignment
             con.Close();
             return status;
         }
+
+        // This method takes in 11 parameters, which represent various pieces of student data.
         public string InsertData_Section_A(string ua, string ub, string uc, string ud, string ue, string uf, string ug, string uh, string ui, string uj, string uk)
         {
+            // Declare a string variable named 'status' to hold the result of this method.
             string status;
+            // Open a connection to the database.
             con.Open();
+            // Set the value of the 'Student_id' variable to the value of the 'ug' parameter.
             Student_id = ug;
+            // Set the value of the 'stud_fname' variable to the value of the 'uc' parameter.
             stud_fname = uc;
+            // Set the value of the 'stud_lname' variable to the value of the 'ud' parameter.
             stud_lname = ud;
+            // Set the value of the 'Stud_Ic_or_pass_num' variable to the value of the 'ue' parameter.
             Stud_Ic_or_pass_num = ue;
+            // Set the value of the 'Stud_Ic_or_pass' variable to the value of the 'uf' parameter.
             Stud_Ic_or_pass = uf;
+            // Set the value of the 'Stud_email' variable to the value of the 'uj' parameter.
             Stud_email = uj;
+            // Set the value of the 'Stud_contact_no' variable to the value of the 'ui' parameter.
             Stud_contact_no = ui;
+            // Set the value of the 'Stud_house_adr' variable to the value of the 'uh' parameter.
             Stud_house_adr = uh;
+            // Set the value of the 'Stud_gender' variable to the value of the 'uk' parameter.
             Stud_gender = uk;
+            // Set the value of the 'Stud_nationality' variable to the value of the 'ua' parameter.
             Stud_nationality = ua;
+            // Set the value of the 'Stud_dob' variable to the value of the 'ub' parameter.
             Stud_dob = ub;
+
+            // Declare a new SQL command that inserts data into the 'STUDENT_T' table.
             SqlCommand command = new SqlCommand("INSERT INTO STUDENT_T (student_id, student_fname, student_lname, student_ic_or_passport_num, student_ic_or_passport, student_email, student_contact_no, student_house_adr, student_gender, student_dob, student_nationality) VALUES (@sid, @sfname,@slname, @sipnum, @ip, @email, @scn, @houseadr, @gender, @dob, @nationality)", con);
+            // Set the values of the command's parameters using the appropriate variables.
             command.Parameters.AddWithValue("@sid", Student_id);
             command.Parameters.AddWithValue("@sfname", stud_fname);
             command.Parameters.AddWithValue("@slname", stud_lname);
@@ -177,24 +202,28 @@ namespace Group2_Assignment
             command.Parameters.AddWithValue("@houseadr", Stud_house_adr);
             command.Parameters.AddWithValue("@gender", Stud_gender);
             command.Parameters.AddWithValue("@nationality", Stud_nationality);
-
+            // If the 'Stud_dob' variable can be parsed as a DateTime value, set the value of the '@dob' parameter to it.
             if (DateTime.TryParse(Stud_dob, out DateTime d))
             {
+                // Adds the DateTime value to the SqlCommand object as a parameter
                 command.Parameters.AddWithValue("@dob", d);
             }
+            //Else
             else
             {
+                //Message box shows the string could not be parsed to a date time value
                 MessageBox.Show("The string could not be parsed to a DateTime value");
             }
+            // Check the value of "i" and set the "status" variable accordingly
             int i = command.ExecuteNonQuery();
             if (i != 0)
                 status = "Registration Successful";
             else
                 status = "Unable to register";
-
+            // Close the database connection
             con.Close();
+            // Return the value of "status"
             return status;
-
         }
 
         public string InsertData_Section_B(string un, string uo, string up, string uq, string ur, string us, string ut, string uu, string uv, string uw)

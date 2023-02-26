@@ -93,31 +93,45 @@ namespace Group2_Assignment
 
         }
 
+        // This method is an event handler for the 'btnDelReq' button, which is clicked by the user
         private void btnDelReq_Click(object sender, EventArgs e)
         {
+            // Initialize three string variables, which will be used to store the results of various methods
             string s = null;
             string t = null;
             string u = null;
+            // Create a new update_subject_enrolment object with a parameter of 'txtRequestID.Text'
             update_subject_enrolment obj2 = new update_subject_enrolment(txtRequestID.Text);
-            s= obj2.find_request_id(txtRequestID.Text);
+            // Call the 'find_request_id' method on the update_subject_enrolment object, and store the result in 's'
+            s = obj2.find_request_id(txtRequestID.Text);
+            // If the result of 'find_request_id' is "Request ID exist", continue with the deletion process
             if (s == "Request ID exist")
             {
+                // Create another update_subject_enrolment object with a parameter of 'txtRequestID.Text'
                 update_subject_enrolment obj3 = new update_subject_enrolment(txtRequestID.Text);
+                // Call the 'check_status' method on the new update_subject_enrolment object, and store the result in 't'
                 t = obj3.check_status(txtRequestID.Text);
+                // If the result of 'check_status' is "Request ID exists and is pending", notify the user that the request cannot be deleted
                 if (t == "Request ID exists and is pending")
                 {
                     MessageBox.Show(" Unable to delete " + txtRequestID.Text + " as status is still pending", "Delete Request ");
                 }
+                // If the result of 'check_status' is not "Request ID exists and is pending", proceed with the deletion process
                 else
                 {
+                    // Create a third update_subject_enrolment object with a parameter of 'txtRequestID.Text'
                     update_subject_enrolment obj4 = new update_subject_enrolment(txtRequestID.Text);
+                    // Call the 'delete_request' method on the new update_subject_enrolment object, and store the result in 'u'
                     u = obj4.delete_request(txtRequestID.Text);
+                    // Notify the user that the request has been successfully deleted
                     MessageBox.Show("Request successfully deleted", "Delete Request");
                 }
             }
+            // If the result of 'find_request_id' is not "Request ID exist", notify the user that the request cannot be found
             else
             {
                 MessageBox.Show("Request ID does not exist", "Delete Request");
+                // Notify the user to enter an existing request ID
                 MessageBox.Show("Please enter an existing Request ID", "Delete Request");
             }
         }

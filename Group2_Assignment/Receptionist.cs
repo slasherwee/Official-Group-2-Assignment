@@ -14,6 +14,7 @@ namespace Group2_Assignment
 {
     internal class Receptionist
     {
+        // These private fields represent the Receptionist's attributes.
         private string receptionist_id;
         private string receptionist_pass;
         private string fName;
@@ -24,8 +25,11 @@ namespace Group2_Assignment
         private string contactno;
         private string answer_1;
         private string answer_2;
+
+        // This static field represents a connection to a database.
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
+        // These public properties provide access to the private fields.
         public string FName { get => fName; set => fName = value; }
         public string LName { get => lName; set => lName = value; }
         public string WorkingEx { get => workingEx; set => workingEx = value; }
@@ -37,6 +41,8 @@ namespace Group2_Assignment
         public string Answer_1 { get => answer_1; set => answer_1 = value; }
         public string Answer_2 { get => answer_2; set => answer_2 = value; }
 
+        // This is a constructor for the Receptionist class, which takes a string argument 'a'.
+        // The receptionist_id property is set to the value of 'a'.
         public Receptionist(string a)
         {
             receptionist_id = a;

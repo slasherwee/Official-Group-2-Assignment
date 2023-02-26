@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_generate_Receipt));
             this.gb_receipt = new System.Windows.Forms.GroupBox();
+            this.lbl_status_2 = new System.Windows.Forms.Label();
             this.lbl_receipt_no = new System.Windows.Forms.Label();
             this.txt_receipt_no = new System.Windows.Forms.TextBox();
             this.lbl_status_1 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.lbl_receipt = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.pb_receipt_logo = new System.Windows.Forms.PictureBox();
-            this.lbl_status_2 = new System.Windows.Forms.Label();
             this.gb_receipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_receipt_logo)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,16 @@
             this.gb_receipt.TabIndex = 7;
             this.gb_receipt.TabStop = false;
             // 
+            // lbl_status_2
+            // 
+            this.lbl_status_2.AutoSize = true;
+            this.lbl_status_2.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_status_2.Location = new System.Drawing.Point(441, 245);
+            this.lbl_status_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_status_2.Name = "lbl_status_2";
+            this.lbl_status_2.Size = new System.Drawing.Size(0, 62);
+            this.lbl_status_2.TabIndex = 61;
+            // 
             // lbl_receipt_no
             // 
             this.lbl_receipt_no.AutoSize = true;
@@ -69,7 +79,7 @@
             this.lbl_receipt_no.Location = new System.Drawing.Point(247, 32);
             this.lbl_receipt_no.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_receipt_no.Name = "lbl_receipt_no";
-            this.lbl_receipt_no.Size = new System.Drawing.Size(134, 31);
+            this.lbl_receipt_no.Size = new System.Drawing.Size(268, 62);
             this.lbl_receipt_no.TabIndex = 60;
             this.lbl_receipt_no.Text = "Receipt No:";
             // 
@@ -79,7 +89,7 @@
             this.txt_receipt_no.Location = new System.Drawing.Point(441, 28);
             this.txt_receipt_no.Margin = new System.Windows.Forms.Padding(2);
             this.txt_receipt_no.Name = "txt_receipt_no";
-            this.txt_receipt_no.Size = new System.Drawing.Size(228, 39);
+            this.txt_receipt_no.Size = new System.Drawing.Size(228, 70);
             this.txt_receipt_no.TabIndex = 59;
             // 
             // lbl_status_1
@@ -89,7 +99,7 @@
             this.lbl_status_1.Location = new System.Drawing.Point(441, 187);
             this.lbl_status_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_status_1.Name = "lbl_status_1";
-            this.lbl_status_1.Size = new System.Drawing.Size(0, 32);
+            this.lbl_status_1.Size = new System.Drawing.Size(0, 62);
             this.lbl_status_1.TabIndex = 28;
             // 
             // lbl_status
@@ -99,7 +109,7 @@
             this.lbl_status.Location = new System.Drawing.Point(247, 187);
             this.lbl_status.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(83, 31);
+            this.lbl_status.Size = new System.Drawing.Size(167, 62);
             this.lbl_status.TabIndex = 27;
             this.lbl_status.Text = "Status:";
             // 
@@ -110,7 +120,7 @@
             this.lbl_stud_id.Location = new System.Drawing.Point(247, 108);
             this.lbl_stud_id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_stud_id.Name = "lbl_stud_id";
-            this.lbl_stud_id.Size = new System.Drawing.Size(130, 31);
+            this.lbl_stud_id.Size = new System.Drawing.Size(261, 62);
             this.lbl_stud_id.TabIndex = 25;
             this.lbl_stud_id.Text = "Student ID:";
             // 
@@ -120,7 +130,7 @@
             this.txt_stud_id.Location = new System.Drawing.Point(441, 104);
             this.txt_stud_id.Margin = new System.Windows.Forms.Padding(2);
             this.txt_stud_id.Name = "txt_stud_id";
-            this.txt_stud_id.Size = new System.Drawing.Size(228, 39);
+            this.txt_stud_id.Size = new System.Drawing.Size(228, 70);
             this.txt_stud_id.TabIndex = 7;
             // 
             // btn_generate_receipt
@@ -144,7 +154,7 @@
             this.lbl_receipt.Font = new System.Drawing.Font("Segoe UI", 19.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_receipt.Location = new System.Drawing.Point(-5, -4);
             this.lbl_receipt.Name = "lbl_receipt";
-            this.lbl_receipt.Size = new System.Drawing.Size(1062, 135);
+            this.lbl_receipt.Size = new System.Drawing.Size(2120, 258);
             this.lbl_receipt.TabIndex = 29;
             this.lbl_receipt.Text = "                                        \r\n                                       " +
     "           RECEIPT                                                    \r\n        " +
@@ -173,16 +183,6 @@
             this.pb_receipt_logo.Size = new System.Drawing.Size(71, 78);
             this.pb_receipt_logo.TabIndex = 58;
             this.pb_receipt_logo.TabStop = false;
-            // 
-            // lbl_status_2
-            // 
-            this.lbl_status_2.AutoSize = true;
-            this.lbl_status_2.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_status_2.Location = new System.Drawing.Point(441, 245);
-            this.lbl_status_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_status_2.Name = "lbl_status_2";
-            this.lbl_status_2.Size = new System.Drawing.Size(0, 32);
-            this.lbl_status_2.TabIndex = 61;
             // 
             // frm_generate_Receipt
             // 

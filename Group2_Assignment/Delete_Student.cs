@@ -10,6 +10,7 @@ namespace Group2_Assignment
 {
     internal class Delete_Student
     {
+        // These private fields represent the Delete_Student attributes.
         private string stud_fname;
         private string stud_lname;
         private string stud_Ic_or_pass_num;
@@ -42,8 +43,11 @@ namespace Group2_Assignment
         private string sub_month_of_enrol;
         private string sub_sub;
         private string sub_level_of_sub;
+
+        // This static field represents a connection to a database.
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
+        // These public properties provide access to the private fields.
         public string Stud_Ic_or_pass_num { get => stud_Ic_or_pass_num; set => stud_Ic_or_pass_num = value; }
         public string Stud_Ic_or_pass { get => stud_Ic_or_pass; set => stud_Ic_or_pass = value; }
         public string S_ID { get => s_ID; set => s_ID = value; }
@@ -73,6 +77,8 @@ namespace Group2_Assignment
 
         public Delete_Student(string a, string b, string c, string d, string e, string f, string g, string h, string i, string j, string k)
         {
+            // Constructor with 11 parameters to initialize the properties of the Delete_Student class.
+            // Assigns the values of the passed parameters to the respective properties of the class.
             S_ID = a;
             Stud_email = b;
             Stud_contact_no = c;
@@ -88,11 +94,15 @@ namespace Group2_Assignment
 
         public Delete_Student(string d, string e)
         {
+            // Constructor with 2 parameters to initialize the properties of the Delete_Student class.
+            // Assigns the values of the passed parameters to the respective properties of the class.
             stud_fname = d;
             stud_lname = e;
         }
         public Delete_Student(string j, string k, string l, string m, string n, string o, string p, string q, string r, string s)
         {
+            // Constructor with 10 parameters to initialize the properties of the Delete_Student class.
+            // Assigns the values of the passed parameters to the respective properties of the class.
             pg_fname = j;
             pg_lname = k;
             Pg_contact_no = l;
@@ -106,16 +116,22 @@ namespace Group2_Assignment
         }
         public Delete_Student(string id, string ac, string ad)
         {
+            // Constructor with 3 parameters to initialize the properties of the Delete_Student class.
+            // Assigns the values of the passed parameters to the respective properties of the class.
             Student_id = id;
             Activate_acc = ac;
             student_name = ad;
         }
         public Delete_Student(string ad)
         {
+            // Constructor with 1 parameter to initialize the properties of the Delete_Student class.
+            // Assigns the value of the passed parameter to the student_name property of the class.
             student_name = ad;
         }
         public Delete_Student(string s, string t, string u, string x, string y, string z)
         {
+            // Constructor with 6 parameters to initialize the properties of the Delete_Student class.
+            // Assigns the values of the passed parameters to the respective properties of the class.
             Sub_id = s;
             Sub_level_of_sub = y;
             Sub_month_of_enrol = z;

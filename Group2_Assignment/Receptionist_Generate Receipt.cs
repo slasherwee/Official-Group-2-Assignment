@@ -17,7 +17,7 @@ namespace Group2_Assignment
         public frm_generate_Receipt()
         {
             InitializeComponent();
-        }
+        } 
         public string Receipt_no { get; set; }
         private void btn_generate_receipt_Click(object sender, EventArgs e)
         {
@@ -62,6 +62,11 @@ namespace Group2_Assignment
             this.Hide();
             frm_Main_Menu secondForm = new frm_Main_Menu();
             secondForm.Show();
+        }
+
+        private void gb_receipt_Enter(object sender, EventArgs e)
+        {
+
         }
     }
     

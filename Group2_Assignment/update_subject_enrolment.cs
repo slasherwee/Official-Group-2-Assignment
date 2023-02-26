@@ -8,10 +8,13 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
+// This namespace contains the update_subject_enrolment class.
 namespace Group2_Assignment
 {
+    // This class is marked as internal, which means it can only be accessed within the same assembly.
     internal class update_subject_enrolment
     {
+        // These private fields will store the values of each property.
         private string request_id;
         private string student_id;
         private string current_sub_id;
@@ -19,18 +22,29 @@ namespace Group2_Assignment
         private string tutor_name;
         private string date;
         private string status;
+        // This static SqlConnection object will be used to connect to a database using a connection string from the configuration file.
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
+        // This property allows access to the request_id private field.
         public string Request_id { get => request_id; set => request_id = value; }
+        // This property allows access to the student_id private field.
         public string Student_id { get => student_id; set => student_id = value; }
+        // This property allows access to the current_sub_id private field.
         public string Current_sub_id { get => current_sub_id; set => current_sub_id = value; }
+        // This property allows access to the new_sub_id private field.
         public string New_sub_id { get => new_sub_id; set => new_sub_id = value; }
+        // This property allows access to the tutor_name private field.
         public string Tutor_name { get => tutor_name; set => tutor_name = value; }
+        // This property allows access to the date private field.
         public string Date { get => date; set => date = value; }
+        // This property allows access to the status private field.
         public string Status { get => status; set => status = value; }
+
+        // This is a constructor for the update_subject_enrolment class, which takes a string argument 'b'.
 
         public update_subject_enrolment(string b)
         {
+            // The Student_id property is set to the value of 'b'.
             Student_id = b;
         }
 
@@ -381,23 +395,33 @@ namespace Group2_Assignment
             }
             return request;
         }
+
+        // The method delete's the request from student when updating subject enrolment
         public string delete_request(string un)
         {
+            // Declare a string variable 'c' and initialize it with an empty string
             string c = string.Empty;
+            // Assign the value of the 'un' parameter to the 'Request_id' variable
             Request_id = un;
+            // Open a database connection
             con.Open();
+            // Create a SqlCommand object with a DELETE SQL statement that deletes a row from the 'REQUEST_T' table where the 'request_id' column matches the value of the 'Request_id' variable
             SqlCommand cmd = new SqlCommand("DELETE FROM REQUEST_T WHERE request_id = @id", con);
+            // Add a parameter '@id' to the SqlCommand object and assign it the value of the 'Request_id' variable using the 'AddWithValue' method
             cmd.Parameters.AddWithValue("@id", Request_id);
+            // Execute the SQL command and retrieve the result set using a SqlDataReader object in a 'using' block to ensure proper disposal of resources
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                while (reader.Read())
+                while (reader.Read()) // While there are more rows in the result set, execute the following code block for each row
                 {
+                    // Retrieve the value of the third column in the current row of the result set using the 'GetString' method and assign it to the 'delete' variable
                     string delete = reader.GetString(2);
+                    // Assign the value of the 'delete' variable converted to a string to the 'c' variable
                     c = delete.ToString();
                 }
             }
-            con.Close();
-            return c;
+            con.Close(); // Close the database connection
+            return c; // Return the value of the 'c' variable
         }
     }
 }

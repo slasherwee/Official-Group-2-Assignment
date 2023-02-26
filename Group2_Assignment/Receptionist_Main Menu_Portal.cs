@@ -15,6 +15,7 @@ namespace Group2_Assignment
     {
         public string r_id { get; set; }
         public static string id;
+        private Color _formColor;
         public frm_Main_Menu()
         {
             InitializeComponent();
@@ -24,10 +25,16 @@ namespace Group2_Assignment
         {
         }
 
-        public frm_Main_Menu (string un)
+        public frm_Main_Menu (string un,Color formColor)
         {
             InitializeComponent();
             id = un;
+            _formColor = formColor;
+        }
+        public frm_Main_Menu(Color formColor)
+        {
+            InitializeComponent();
+            _formColor = formColor;
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -79,6 +86,7 @@ namespace Group2_Assignment
             lbl_user_name.Text = "Hello, " + id;
             lbl_user_name.Left = (this.Width - lbl_user_name.Width) / 2;
             ps_setting.Size = ps_setting.MinimumSize;
+            this.BackColor = _formColor;
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -113,7 +121,7 @@ namespace Group2_Assignment
 
         private void btnTheme_Click(object sender, EventArgs e)
         {
-            Theme twelveForm = new Theme();
+            frm_Receptionist_Theme twelveForm = new frm_Receptionist_Theme(this.BackColor);
             twelveForm.Show();
         }
 
