@@ -117,7 +117,6 @@ namespace Group2_Assignment
             // 
             this.txtFAns.Location = new System.Drawing.Point(418, 282);
             this.txtFAns.Name = "txtFAns";
-            this.txtFAns.PasswordChar = '●';
             this.txtFAns.Size = new System.Drawing.Size(357, 34);
             this.txtFAns.TabIndex = 23;
             // 

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -80,20 +81,63 @@ namespace Group2_Assignment
         private void btnDone_Click(object sender, EventArgs e)
         {
             //Hide button name as btnDone
-            btnDone.Hide();
-            //Disable textbox for editing
-            txtFirstName.ReadOnly = true;
-            txtLastName.ReadOnly = true;
-            txtWorkingExp.ReadOnly = true;
-            txtOfficeLocation.ReadOnly = true;
-            txtEmail.ReadOnly = true;
-            txtContactNo.ReadOnly = true;
 
-            Admin obj1 = new Admin(UserID);
-            MessageBox.Show(obj1.UpdateProfile(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtContactNo.Text, txtWorkingExp.Text,
-            txtOfficeLocation.Text));
-            //Appear of button name as btnEdit
-            btnEdit.Show();
+            //Disable textbox for editing
+
+            string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            string name = "^[a-zA-Z ]+$";
+
+            if (txtFirstName.Text != null && txtLastName.Text != null && txtWorkingExp.Text != null && txtOfficeLocation.Text != null && txtEmail != null && txtContactNo.Text != null)
+            {
+
+                if (!Regex.IsMatch(txtEmail.Text, pattern))
+                {
+                    MessageBox.Show("Please provide a valid email");
+                    txtEmail.Focus();
+                }
+                else if (txtContactNo.TextLength < 10)
+                {
+                    MessageBox.Show("Contact numebr should contain at least 10 characters!");
+                    txtContactNo.Focus();
+                }
+                else if (!Regex.IsMatch(txtFirstName.Text, name))
+                {
+                    MessageBox.Show("Invalid first name.");
+                    txtFirstName.Focus();
+                }
+                else if (!Regex.IsMatch(txtLastName.Text, name))
+                {
+                    MessageBox.Show("Invalid last name.");
+                    txtLastName.Focus();
+                }
+                else
+                {
+                    Admin obj1 = new Admin(UserID);
+                    MessageBox.Show(obj1.UpdateProfile(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtContactNo.Text, txtWorkingExp.Text,
+                    txtOfficeLocation.Text));
+                    txtFirstName.ReadOnly = true;
+                    txtLastName.ReadOnly = true;
+                    txtWorkingExp.ReadOnly = true;
+                    txtOfficeLocation.ReadOnly = true;
+                    txtEmail.ReadOnly = true;
+                    txtContactNo.ReadOnly = true;
+                    //Appear of button name as btnEdit
+                    btnEdit.Show();
+                    btnDone.Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all information!!");
+                txtFirstName.ReadOnly = false;
+                txtLastName.ReadOnly = false;
+                txtWorkingExp.ReadOnly = false;
+                txtOfficeLocation.ReadOnly = false;
+                txtEmail.ReadOnly = false;
+                txtContactNo.ReadOnly = false;
+            }
+
+
         }
 
     }
