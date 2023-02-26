@@ -18,6 +18,7 @@ namespace Group2_Assignment
         //static -> to hold the variable until the application is closed
         public static string id;
         bool isCollapsed = true;
+        private Color _formColor;
 
         public Student_Portal()
         {
@@ -30,6 +31,12 @@ namespace Group2_Assignment
             id = n;
         }
 
+        public Student_Portal(Color formColor)
+        {
+            InitializeComponent();
+            _formColor = formColor;
+        }
+
         private void Student_Portal_Load(object sender, EventArgs e)
         {
             //method load is the method that will automatically executed when the form is projected
@@ -37,6 +44,7 @@ namespace Group2_Assignment
             lblUsername.Text = "Welcome, " + id;
             lblUsername.Left = (this.Width - lblUsername.Width) / 2; //center the label
             panelSetting.Size = panelSetting.MinimumSize;
+            this.BackColor = _formColor;
         }
 
         private void btnSchedule_Click(object sender, EventArgs e)
@@ -87,7 +95,7 @@ namespace Group2_Assignment
         private void btnTheme_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Theme theme = new Theme();
+            Student_Theme theme = new Student_Theme();
             theme.ShowDialog();
         }
 
