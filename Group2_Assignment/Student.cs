@@ -16,6 +16,7 @@ namespace Group2_Assignment
 {
     internal class Student
     {
+        // Attributes for Student Class
         private string studId;
         private string firstName;
         private string lastName;
@@ -50,8 +51,10 @@ namespace Group2_Assignment
         private string newSubNameSelected;
         private string currentSubNameSelected;
 
+        // Initializes a static SQL connection by creating an object named "con" with given connection string from App.config
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
+        // Getters and setters values set to retrive the values from private field
         public string StudId { get => studId; set => studId = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
@@ -86,6 +89,7 @@ namespace Group2_Assignment
         public string Ans_q1 { get => ans_q1; set => ans_q1 = value; }
         public string Ans_q2 { get => ans_q2; set => ans_q2 = value; }
 
+        // Constructors for Student class
         public Student(string n)
         {
             studId = n;
