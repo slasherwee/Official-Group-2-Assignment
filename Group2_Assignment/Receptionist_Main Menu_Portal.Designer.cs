@@ -173,7 +173,7 @@
             this.pb_receptionist_logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pb_receptionist_logo.BackgroundImage")));
             this.pb_receptionist_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pb_receptionist_logo.Location = new System.Drawing.Point(405, 114);
-            this.pb_receptionist_logo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pb_receptionist_logo.Margin = new System.Windows.Forms.Padding(1);
             this.pb_receptionist_logo.Name = "pb_receptionist_logo";
             this.pb_receptionist_logo.Size = new System.Drawing.Size(186, 144);
             this.pb_receptionist_logo.TabIndex = 21;
@@ -286,7 +286,7 @@
             this.Controls.Add(this.btn_update_profile);
             this.Controls.Add(this.lbl_etc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_Main_Menu";
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.frm_Main_Menu_Load);

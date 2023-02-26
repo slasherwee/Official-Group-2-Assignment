@@ -29,9 +29,6 @@ namespace Group2_Assignment
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frm_Main_Menu firstForm = new frm_Main_Menu();
-            firstForm.Show();
         }
 
         private void Student_Registration_Section_A_Load(object sender, EventArgs e)
@@ -313,6 +310,9 @@ namespace Group2_Assignment
                     Delete_Student obj2 = new Delete_Student(stud_ID);
                     obj2.delete_data_master(stud_ID);
                     MessageBox.Show(stud_ID + " registration has been deleted ");
+                    this.Hide();
+                    frm_Main_Menu fifthForm = new frm_Main_Menu();
+                    fifthForm.Show();
                 }
                 else
                 {
@@ -321,6 +321,12 @@ namespace Group2_Assignment
                     frm_Main_Menu thirdForm = new frm_Main_Menu();
                     thirdForm.Show();
                 }
+            }
+            else
+            {
+                this.Hide();
+                frm_Main_Menu forthForm = new frm_Main_Menu();
+                forthForm.Show();
             }
         }
     }
