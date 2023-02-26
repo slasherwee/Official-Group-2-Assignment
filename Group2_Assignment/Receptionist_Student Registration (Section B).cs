@@ -24,7 +24,7 @@ namespace Group2_Assignment
             this.Hide();
             frm_Student_Registration_Section_A firstForm = new frm_Student_Registration_Section_A();
             firstForm.stud_ID= stud_ID;
-            firstForm.Show();
+            firstForm.ShowDialog();
         }
 
         private void btn_proceed_2_Click(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace Group2_Assignment
                                                                             this.Hide();
                                                                             frm_Student_Registration__Section_C_ secondForm = new frm_Student_Registration__Section_C_();
                                                                             secondForm.stud_ID = stud_ID;
-                                                                            secondForm.Show();
+                                                                            secondForm.ShowDialog();
                                                                         }
                                                                         else
                                                                         {

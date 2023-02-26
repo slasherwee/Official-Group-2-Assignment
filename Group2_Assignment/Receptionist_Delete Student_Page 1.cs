@@ -25,7 +25,7 @@ namespace Group2_Assignment
             {
                 frm_Delete_Student_Page_2 firstForm = new frm_Delete_Student_Page_2();
                 firstForm.Stud_ID = txt_student_id.Text;
-                firstForm.Show();
+                firstForm.ShowDialog();
             } 
         }
 

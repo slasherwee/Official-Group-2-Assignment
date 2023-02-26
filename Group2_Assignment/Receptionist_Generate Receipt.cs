@@ -31,7 +31,7 @@ namespace Group2_Assignment
                 {
                     frm_payment_receipt secondForm = new frm_payment_receipt();
                     secondForm.Receipt_no = txt_receipt_no.Text;
-                    secondForm.Show();
+                    secondForm.ShowDialog();
                 }
                 else
                 {

@@ -82,6 +82,8 @@ namespace Group2_Assignment
         }
         private void frm_Main_Menu_Load(object sender, EventArgs e)
         {
+            LoginPage main = new LoginPage();
+            main.Hide();
             ps_setting.Size = ps_setting.MinimumSize;
             lbl_user_name.Text = "Hello, " + id;
             lbl_user_name.Left = (this.Width - lbl_user_name.Width) / 2;

@@ -42,7 +42,7 @@ namespace Group2_Assignment
                     MessageBox.Show("Temporary passowrd is : etc12345");
                     this.Hide();
                     frm_Main_Menu secondForm = new frm_Main_Menu();
-                    secondForm.Show();
+                    secondForm.ShowDialog();
                 }
                 else
                     MessageBox.Show("Account must be activated in order to proceed with student registration", "Student Account Activation");
@@ -58,7 +58,7 @@ namespace Group2_Assignment
             this.Hide();
             frm_Student_Registration__Section_C_ firstForm = new frm_Student_Registration__Section_C_();
             firstForm.stud_ID = stud_ID;
-            firstForm.Show();
+            firstForm.ShowDialog();
         }
 
         private void frm_Student_Registration__Section_D__Load(object sender, EventArgs e)

@@ -197,7 +197,7 @@ namespace Group2_Assignment
                                                                                     this.Hide();
                                                                                     frm_Student_Registration__Section_B_ secondForm = new frm_Student_Registration__Section_B_();
                                                                                     secondForm.stud_ID = stud_ID;
-                                                                                    secondForm.Show();
+                                                                                    secondForm.ShowDialog();
                                                                                 }
                                                                                 else
                                                                                 {

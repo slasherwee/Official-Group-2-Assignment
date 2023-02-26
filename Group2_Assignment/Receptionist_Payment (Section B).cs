@@ -41,7 +41,7 @@ namespace Group2_Assignment
             // Create a new Payment_section object "obj2" and pass the student ID entered in the "txt_stud_id" textbox as a parameter
             Payment_section obj2 = new Payment_section(txt_stud_id.Text);
             // Call the "find_id_payment" method of the "obj2" object and pass the student ID entered in the "txt_stud_id" textbox as a parameter
-            obj2.find_id_payment(txt_stud_id.Text);
+            k= obj2.find_id_payment(txt_stud_id.Text);
             // Check if the "k" variable is equal to "Student ID exist"
             if (k == "Student ID does not exist")
             {
@@ -107,8 +107,16 @@ namespace Group2_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frm_Main_Menu firstForm = new frm_Main_Menu();
+            frm_payment_Section_A firstForm = new frm_payment_Section_A();
             firstForm.ShowDialog();
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MessageBox.Show("Payment Cancelled", "Payment");
+            frm_Main_Menu secondForm = new frm_Main_Menu();
+            secondForm.ShowDialog();
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Group2_Assignment
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frm_Main_Menu thirdForm = new frm_Main_Menu();
+            frm_delete_student_page_1 thirdForm = new frm_delete_student_page_1();
             thirdForm.ShowDialog();
         }
 

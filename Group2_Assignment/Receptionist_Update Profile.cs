@@ -135,7 +135,7 @@ namespace Group2_Assignment
             txt_email.ReadOnly = true;
             txt_contact_num.ReadOnly = true;
 
-        Receptionist obj1 = new Receptionist(r_ID);
+            Receptionist obj1 = new Receptionist(r_ID);
 
             //calling static method require className.Method(..)
             //pass object obj1 to method ViewProfile

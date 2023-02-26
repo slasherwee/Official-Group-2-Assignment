@@ -81,7 +81,7 @@ namespace Group2_Assignment
                 // Sets the TotalPrice property of the frm_payment_section_b form to the calculated total price
                 secondForm.TotalPrice = totalPrice;
                 // Displays the frm_payment_section_b form
-                secondForm.Show();
+                secondForm.ShowDialog();
 
             }
             // If no items are selected

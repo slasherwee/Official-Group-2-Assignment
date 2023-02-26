@@ -20,8 +20,6 @@ namespace Group2_Assignment
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
-            frm_update_subject_enrolment_page2 firstForm = new frm_update_subject_enrolment_page2();
-            firstForm.ShowDialog();
         }
 
         private void frm_update_subject_enrolment_view_Load(object sender, EventArgs e)
@@ -36,7 +34,6 @@ namespace Group2_Assignment
             update_subject_enrolment obj8 = new update_subject_enrolment(Student_ID);
             update_subject_enrolment obj9 = new update_subject_enrolment(Student_ID);
             update_subject_enrolment obj10 = new update_subject_enrolment(Student_ID);
-            update_subject_enrolment obj11 = new update_subject_enrolment(Student_ID);
             lbl_num_of_sub_1.Text = obj1.view_subject_enrolment_3(Student_ID);
             lbl_year_of_enrol_1.Text = obj2.view_subject_enrolment_4(Student_ID);
             lbl_level_of_sub_1.Text = obj3.view_subject_enrolment_7(Student_ID);
