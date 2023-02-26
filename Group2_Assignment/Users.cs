@@ -108,7 +108,7 @@ namespace Group2_Assignment
                     LoginPage lp = new LoginPage();
                     lp.Hide();
                     //redirect to Receptionist form
-                    frm_Main_Menu rep = new frm_Main_Menu(un);
+                    frm_Main_Menu rep = new frm_Main_Menu(un, lp.BackColor);
                     rep.ShowDialog();
                 }
             }
