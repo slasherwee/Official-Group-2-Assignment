@@ -75,7 +75,7 @@ namespace Group2_Assignment
                     LoginPage lp = new LoginPage();
                     lp.Hide();
                     //redicrects to Student Portal form
-                    Student_Portal s = new Student_Portal(un);
+                    Student_Portal s = new Student_Portal(un, lp.BackColor);
                     s.ShowDialog();
                 }
                 else if (userRole == "admin")
