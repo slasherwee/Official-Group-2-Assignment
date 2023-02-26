@@ -65,7 +65,7 @@
             // 
             this.dtp_date.CalendarFont = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtp_date.Location = new System.Drawing.Point(710, 90);
-            this.dtp_date.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dtp_date.Margin = new System.Windows.Forms.Padding(1);
             this.dtp_date.Name = "dtp_date";
             this.dtp_date.Size = new System.Drawing.Size(237, 27);
             this.dtp_date.TabIndex = 33;
@@ -92,7 +92,7 @@
             "Online Banking",
             "Cheque"});
             this.cb_payment_method.Location = new System.Drawing.Point(710, 172);
-            this.cb_payment_method.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.cb_payment_method.Margin = new System.Windows.Forms.Padding(1);
             this.cb_payment_method.Name = "cb_payment_method";
             this.cb_payment_method.Size = new System.Drawing.Size(237, 39);
             this.cb_payment_method.TabIndex = 29;
@@ -101,7 +101,7 @@
             // 
             this.txt_stud_name.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_stud_name.Location = new System.Drawing.Point(207, 176);
-            this.txt_stud_name.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txt_stud_name.Margin = new System.Windows.Forms.Padding(1);
             this.txt_stud_name.Name = "txt_stud_name";
             this.txt_stud_name.Size = new System.Drawing.Size(228, 39);
             this.txt_stud_name.TabIndex = 26;
@@ -121,7 +121,7 @@
             // 
             this.txt_remarks.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_remarks.Location = new System.Drawing.Point(259, 333);
-            this.txt_remarks.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txt_remarks.Margin = new System.Windows.Forms.Padding(1);
             this.txt_remarks.Name = "txt_remarks";
             this.txt_remarks.Size = new System.Drawing.Size(581, 39);
             this.txt_remarks.TabIndex = 24;
@@ -130,7 +130,7 @@
             // 
             this.txt_stud_id.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_stud_id.Location = new System.Drawing.Point(207, 86);
-            this.txt_stud_id.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txt_stud_id.Margin = new System.Windows.Forms.Padding(1);
             this.txt_stud_id.Name = "txt_stud_id";
             this.txt_stud_id.Size = new System.Drawing.Size(228, 39);
             this.txt_stud_id.TabIndex = 7;
@@ -185,7 +185,7 @@
             this.btn_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
             this.btn_cancel.Location = new System.Drawing.Point(20, 575);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(1);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(149, 68);
             this.btn_cancel.TabIndex = 34;
@@ -198,7 +198,7 @@
             this.btn_proceed.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_proceed.ForeColor = System.Drawing.Color.White;
             this.btn_proceed.Location = new System.Drawing.Point(808, 575);
-            this.btn_proceed.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btn_proceed.Margin = new System.Windows.Forms.Padding(1);
             this.btn_proceed.Name = "btn_proceed";
             this.btn_proceed.Size = new System.Drawing.Size(149, 68);
             this.btn_proceed.TabIndex = 15;
@@ -225,7 +225,7 @@
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Location = new System.Drawing.Point(33, 36);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(1);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(66, 59);
             this.btnBack.TabIndex = 56;
@@ -257,9 +257,9 @@
             this.grb_payment.Controls.Add(this.lbl_date);
             this.grb_payment.Controls.Add(this.lblstudname);
             this.grb_payment.Location = new System.Drawing.Point(20, 145);
-            this.grb_payment.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.grb_payment.Margin = new System.Windows.Forms.Padding(1);
             this.grb_payment.Name = "grb_payment";
-            this.grb_payment.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.grb_payment.Padding = new System.Windows.Forms.Padding(1);
             this.grb_payment.Size = new System.Drawing.Size(948, 414);
             this.grb_payment.TabIndex = 4;
             this.grb_payment.TabStop = false;
@@ -277,8 +277,9 @@
             this.Controls.Add(this.grb_payment);
             this.Controls.Add(this.btn_proceed);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_payment_section_b";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment";
             this.Load += new System.EventHandler(this.frm_payment_section_b_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_payment_logo)).EndInit();

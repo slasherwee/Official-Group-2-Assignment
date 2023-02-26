@@ -192,6 +192,7 @@
             this.Controls.Add(this.panelTutor);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Receptionist_Security_Questions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Receptionist Security Questions";
             this.Load += new System.EventHandler(this.frm_Receptionist_Security_Questions_Load);
             this.panelTutor.ResumeLayout(false);

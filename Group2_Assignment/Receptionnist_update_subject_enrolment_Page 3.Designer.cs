@@ -308,6 +308,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_update_subject_enrolment_page3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Subject Enrolment ";
             this.Load += new System.EventHandler(this.frm_update_subject_enrolment_view_Load);
             this.grb_subject_enrolment.ResumeLayout(false);

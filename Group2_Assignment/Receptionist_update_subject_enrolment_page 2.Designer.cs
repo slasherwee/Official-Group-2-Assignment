@@ -67,7 +67,7 @@
             // 
             this.txt_student_id.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_student_id.Location = new System.Drawing.Point(482, 218);
-            this.txt_student_id.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txt_student_id.Margin = new System.Windows.Forms.Padding(1);
             this.txt_student_id.Name = "txt_student_id";
             this.txt_student_id.Size = new System.Drawing.Size(236, 39);
             this.txt_student_id.TabIndex = 8;
@@ -78,7 +78,7 @@
             this.btn_proceed.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_proceed.ForeColor = System.Drawing.Color.White;
             this.btn_proceed.Location = new System.Drawing.Point(810, 560);
-            this.btn_proceed.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btn_proceed.Margin = new System.Windows.Forms.Padding(1);
             this.btn_proceed.Name = "btn_proceed";
             this.btn_proceed.Size = new System.Drawing.Size(149, 68);
             this.btn_proceed.TabIndex = 10;
@@ -113,7 +113,7 @@
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Location = new System.Drawing.Point(24, 32);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(1);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(66, 59);
             this.btnBack.TabIndex = 16;
@@ -144,8 +144,9 @@
             this.Controls.Add(this.lbl_student_id);
             this.Controls.Add(this.lbl_update_subject_enrolment);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_update_subject_enrolment_page2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Subject Enrolment";
             ((System.ComponentModel.ISupportInitialize)(this.pb_update_subbject_enrolment_logo)).EndInit();
             this.ResumeLayout(false);

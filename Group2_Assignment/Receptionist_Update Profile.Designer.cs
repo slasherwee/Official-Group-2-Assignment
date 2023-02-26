@@ -278,6 +278,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_update_profile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Profile";
             this.Load += new System.EventHandler(this.frm_update_profile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPersonalInfo)).EndInit();

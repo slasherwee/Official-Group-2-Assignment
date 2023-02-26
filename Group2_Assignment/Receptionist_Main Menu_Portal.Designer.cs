@@ -288,6 +288,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_Main_Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.frm_Main_Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_receptionist_logo)).EndInit();

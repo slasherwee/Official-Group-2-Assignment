@@ -150,6 +150,7 @@
             this.Controls.Add(this.panelTutor);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Receptionist_Theme";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Receptionist Theme";
             this.Load += new System.EventHandler(this.frm_Receptionist_Theme_Load);
             this.panelTutor.ResumeLayout(false);

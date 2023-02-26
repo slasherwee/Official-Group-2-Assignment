@@ -163,6 +163,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_delete_student_page_1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Student";
             ((System.ComponentModel.ISupportInitialize)(this.pb_delete_student_logo)).EndInit();
             this.ResumeLayout(false);

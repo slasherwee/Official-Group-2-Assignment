@@ -336,6 +336,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_Delete_page_page_3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Page";
             this.Load += new System.EventHandler(this.frm_Delete_page_page_3_Load);
             this.gb_section_b.ResumeLayout(false);

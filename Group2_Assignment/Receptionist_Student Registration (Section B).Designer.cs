@@ -368,6 +368,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_Student_Registration__Section_B_";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Registration";
             this.Load += new System.EventHandler(this.frm_Student_Registration__Section_B__Load);
             this.grb_section_b.ResumeLayout(false);

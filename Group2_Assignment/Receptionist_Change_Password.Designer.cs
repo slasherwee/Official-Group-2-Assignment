@@ -270,6 +270,7 @@
             this.Controls.Add(this.pbConPassHide);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Receptionist_Change_Password";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Receptionist Change Password";
             this.Load += new System.EventHandler(this.frm_Receptionist_Change_Password_Load);
             this.panelTutor.ResumeLayout(false);

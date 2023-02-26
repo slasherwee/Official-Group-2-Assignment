@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Student_Registration__Section_D_));
             this.grb_section_d = new System.Windows.Forms.GroupBox();
+            this.lbl_student_name_1 = new System.Windows.Forms.Label();
             this.lbl_stud_id = new System.Windows.Forms.Label();
             this.lbl_student_id = new System.Windows.Forms.Label();
             this.cb_activate_account = new System.Windows.Forms.ComboBox();
             this.lbl_activate_acc = new System.Windows.Forms.Label();
+            this.lbl_student_name = new System.Windows.Forms.Label();
             this.btn_submit = new System.Windows.Forms.Button();
             this.pbar_student_registration = new System.Windows.Forms.ProgressBar();
             this.btn_back = new System.Windows.Forms.Button();
             this.lbl_student_registration = new System.Windows.Forms.Label();
             this.pb_student_registration_logo = new System.Windows.Forms.PictureBox();
             this.btn_cancel = new System.Windows.Forms.Button();
-            this.lbl_student_name = new System.Windows.Forms.Label();
-            this.lbl_student_name_1 = new System.Windows.Forms.Label();
             this.grb_section_d.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_student_registration_logo)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,15 @@
             this.grb_section_d.TabStop = false;
             this.grb_section_d.Text = "Section D: Student Account Registration";
             this.grb_section_d.Enter += new System.EventHandler(this.grb_section_c_Enter);
+            // 
+            // lbl_student_name_1
+            // 
+            this.lbl_student_name_1.AutoSize = true;
+            this.lbl_student_name_1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_student_name_1.Location = new System.Drawing.Point(518, 142);
+            this.lbl_student_name_1.Name = "lbl_student_name_1";
+            this.lbl_student_name_1.Size = new System.Drawing.Size(0, 31);
+            this.lbl_student_name_1.TabIndex = 47;
             // 
             // lbl_stud_id
             // 
@@ -106,6 +115,17 @@
             this.lbl_activate_acc.Size = new System.Drawing.Size(195, 31);
             this.lbl_activate_acc.TabIndex = 27;
             this.lbl_activate_acc.Text = "Activate Account:";
+            // 
+            // lbl_student_name
+            // 
+            this.lbl_student_name.AutoSize = true;
+            this.lbl_student_name.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_student_name.Location = new System.Drawing.Point(256, 142);
+            this.lbl_student_name.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbl_student_name.Name = "lbl_student_name";
+            this.lbl_student_name.Size = new System.Drawing.Size(168, 31);
+            this.lbl_student_name.TabIndex = 0;
+            this.lbl_student_name.Text = "Student Name:";
             // 
             // btn_submit
             // 
@@ -181,26 +201,6 @@
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
-            // lbl_student_name
-            // 
-            this.lbl_student_name.AutoSize = true;
-            this.lbl_student_name.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_student_name.Location = new System.Drawing.Point(256, 142);
-            this.lbl_student_name.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbl_student_name.Name = "lbl_student_name";
-            this.lbl_student_name.Size = new System.Drawing.Size(168, 31);
-            this.lbl_student_name.TabIndex = 0;
-            this.lbl_student_name.Text = "Student Name:";
-            // 
-            // lbl_student_name_1
-            // 
-            this.lbl_student_name_1.AutoSize = true;
-            this.lbl_student_name_1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_student_name_1.Location = new System.Drawing.Point(518, 142);
-            this.lbl_student_name_1.Name = "lbl_student_name_1";
-            this.lbl_student_name_1.Size = new System.Drawing.Size(0, 31);
-            this.lbl_student_name_1.TabIndex = 47;
-            // 
             // frm_Student_Registration__Section_D_
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -216,6 +216,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_Student_Registration__Section_D_";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Registration";
             this.Load += new System.EventHandler(this.frm_Student_Registration__Section_D__Load);
             this.grb_section_d.ResumeLayout(false);

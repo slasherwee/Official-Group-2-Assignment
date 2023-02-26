@@ -290,6 +290,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frm_payment_receipt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment Receipt";
             this.Load += new System.EventHandler(this.frm_payment_receipt_Load);
             this.gb_receipt.ResumeLayout(false);
