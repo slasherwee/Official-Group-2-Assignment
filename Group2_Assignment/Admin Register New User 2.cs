@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group2_Assignment;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
+
+
 
 namespace Group2_Assignment
 {
@@ -625,14 +628,5 @@ namespace Group2_Assignment
             }
         }
 
-        private void radMale_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radFemale_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
