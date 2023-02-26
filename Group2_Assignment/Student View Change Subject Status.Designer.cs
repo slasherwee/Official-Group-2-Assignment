@@ -37,15 +37,6 @@
             btnBack = new Button();
             lblTitle = new Label();
             dgvRequestStatus = new DataGridView();
-            request_id = new DataGridViewTextBoxColumn();
-            request_date = new DataGridViewTextBoxColumn();
-            current_sub_id = new DataGridViewTextBoxColumn();
-            current_sub_name = new DataGridViewTextBoxColumn();
-            current_tutor = new DataGridViewTextBoxColumn();
-            new_sub_id = new DataGridViewTextBoxColumn();
-            new_sub_name = new DataGridViewTextBoxColumn();
-            new_tutor = new DataGridViewTextBoxColumn();
-            request_status = new DataGridViewTextBoxColumn();
             label1 = new Label();
             grbDeleteRequest = new GroupBox();
             btnDelReq = new Button();
@@ -116,7 +107,6 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvRequestStatus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRequestStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRequestStatus.Columns.AddRange(new DataGridViewColumn[] { request_id, request_date, current_sub_id, current_sub_name, current_tutor, new_sub_id, new_sub_name, new_tutor, request_status });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 192, 192);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -140,87 +130,6 @@
             dgvRequestStatus.RowTemplate.Height = 29;
             dgvRequestStatus.Size = new Size(918, 282);
             dgvRequestStatus.TabIndex = 44;
-            // 
-            // request_id
-            // 
-            request_id.DataPropertyName = "request_id";
-            request_id.HeaderText = "Request ID";
-            request_id.MinimumWidth = 6;
-            request_id.Name = "request_id";
-            request_id.ReadOnly = true;
-            request_id.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // request_date
-            // 
-            request_date.DataPropertyName = "request_date";
-            request_date.HeaderText = "Date";
-            request_date.MinimumWidth = 6;
-            request_date.Name = "request_date";
-            request_date.ReadOnly = true;
-            request_date.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // current_sub_id
-            // 
-            current_sub_id.DataPropertyName = "current_sub_id";
-            current_sub_id.HeaderText = "Current Sub ID";
-            current_sub_id.MinimumWidth = 6;
-            current_sub_id.Name = "current_sub_id";
-            current_sub_id.ReadOnly = true;
-            current_sub_id.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // current_sub_name
-            // 
-            current_sub_name.DataPropertyName = "current_sub_name";
-            current_sub_name.HeaderText = "Current Sub Name";
-            current_sub_name.MinimumWidth = 6;
-            current_sub_name.Name = "current_sub_name";
-            current_sub_name.ReadOnly = true;
-            current_sub_name.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // current_tutor
-            // 
-            current_tutor.DataPropertyName = "current_tutor";
-            current_tutor.HeaderText = "Current Tutor";
-            current_tutor.MinimumWidth = 6;
-            current_tutor.Name = "current_tutor";
-            current_tutor.ReadOnly = true;
-            current_tutor.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // new_sub_id
-            // 
-            new_sub_id.DataPropertyName = "new_sub_id";
-            new_sub_id.HeaderText = "New Sub ID";
-            new_sub_id.MinimumWidth = 6;
-            new_sub_id.Name = "new_sub_id";
-            new_sub_id.ReadOnly = true;
-            new_sub_id.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // new_sub_name
-            // 
-            new_sub_name.DataPropertyName = "new_sub_name";
-            new_sub_name.HeaderText = "New Sub Name";
-            new_sub_name.MinimumWidth = 6;
-            new_sub_name.Name = "new_sub_name";
-            new_sub_name.ReadOnly = true;
-            new_sub_name.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // new_tutor
-            // 
-            new_tutor.DataPropertyName = "new_tutor";
-            new_tutor.HeaderText = "New Tutor";
-            new_tutor.MinimumWidth = 6;
-            new_tutor.Name = "new_tutor";
-            new_tutor.ReadOnly = true;
-            new_tutor.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // request_status
-            // 
-            request_status.DataPropertyName = "request_status";
-            request_status.HeaderText = "Status";
-            request_status.MinimumWidth = 6;
-            request_status.Name = "request_status";
-            request_status.ReadOnly = true;
-            request_status.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // label1
             // 
@@ -302,14 +211,5 @@
         private GroupBox grbDeleteRequest;
         private TextBox txtRequestID;
         private Button btnDelReq;
-        private DataGridViewTextBoxColumn request_id;
-        private DataGridViewTextBoxColumn request_date;
-        private DataGridViewTextBoxColumn current_sub_id;
-        private DataGridViewTextBoxColumn current_sub_name;
-        private DataGridViewTextBoxColumn current_tutor;
-        private DataGridViewTextBoxColumn new_sub_id;
-        private DataGridViewTextBoxColumn new_sub_name;
-        private DataGridViewTextBoxColumn new_tutor;
-        private DataGridViewTextBoxColumn request_status;
     }
 }
