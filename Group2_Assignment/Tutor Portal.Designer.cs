@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tutor_Portal));
             this.panelTutor = new System.Windows.Forms.Panel();
-            this.lblETC = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.panelSetting = new System.Windows.Forms.Panel();
             this.btnUpdateSecurityQuestions = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnTheme = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblUserID = new System.Windows.Forms.Label();
+            this.pbTutor = new System.Windows.Forms.PictureBox();
             this.btnCourse = new System.Windows.Forms.Button();
             this.btnSchedule = new System.Windows.Forms.Button();
             this.btnViewStudent = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelTutor.SuspendLayout();
             this.panelSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTutor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,22 +59,22 @@
             // panelTutor
             // 
             this.panelTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
-            this.panelTutor.Controls.Add(this.lblETC);
+            this.panelTutor.Controls.Add(this.lblHeader);
             this.panelTutor.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTutor.Location = new System.Drawing.Point(0, 0);
             this.panelTutor.Name = "panelTutor";
             this.panelTutor.Size = new System.Drawing.Size(982, 69);
             this.panelTutor.TabIndex = 0;
             // 
-            // lblETC
+            // lblHeader
             // 
-            this.lblETC.AutoSize = true;
-            this.lblETC.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblETC.Location = new System.Drawing.Point(27, 22);
-            this.lblETC.Name = "lblETC";
-            this.lblETC.Size = new System.Drawing.Size(310, 31);
-            this.lblETC.TabIndex = 0;
-            this.lblETC.Text = "Excellent Tutor Centre (ETC)";
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblHeader.Location = new System.Drawing.Point(27, 22);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(310, 31);
+            this.lblHeader.TabIndex = 0;
+            this.lblHeader.Text = "Excellent Tutor Centre (ETC)";
             // 
             // panelSetting
             // 
@@ -154,28 +154,28 @@
             this.btnSetting.UseVisualStyleBackColor = false;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
-            // lblUsername
+            // lblUserID
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(83)))));
-            this.lblUsername.Location = new System.Drawing.Point(398, 275);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(14, 30);
-            this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "\r\n";
-            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUserID.AutoSize = true;
+            this.lblUserID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblUserID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblUserID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(196)))), ((int)(((byte)(83)))));
+            this.lblUserID.Location = new System.Drawing.Point(398, 275);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(14, 30);
+            this.lblUserID.TabIndex = 1;
+            this.lblUserID.Text = "\r\n";
+            this.lblUserID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox3
+            // pbTutor
             // 
-            this.pictureBox3.Image = global::Group2_Assignment.Properties.Resources.tutor;
-            this.pictureBox3.Location = new System.Drawing.Point(415, 84);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(174, 163);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.pbTutor.Image = global::Group2_Assignment.Properties.Resources.tutor;
+            this.pbTutor.Location = new System.Drawing.Point(415, 84);
+            this.pbTutor.Name = "pbTutor";
+            this.pbTutor.Size = new System.Drawing.Size(174, 163);
+            this.pbTutor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTutor.TabIndex = 2;
+            this.pbTutor.TabStop = false;
             // 
             // btnCourse
             // 
@@ -293,7 +293,7 @@
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.lblUserID);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbSchedule);
             this.Controls.Add(this.pbCourse);
@@ -301,7 +301,7 @@
             this.Controls.Add(this.btnViewStudent);
             this.Controls.Add(this.btnSchedule);
             this.Controls.Add(this.btnCourse);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pbTutor);
             this.Controls.Add(this.panelTutor);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -312,7 +312,7 @@
             this.panelTutor.ResumeLayout(false);
             this.panelTutor.PerformLayout();
             this.panelSetting.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTutor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -325,9 +325,9 @@
         #endregion
 
         private Panel panelTutor;
-        private Label lblETC;
-        private Label lblUsername;
-        private PictureBox pictureBox3;
+        private Label lblHeader;
+        private Label lblUserID;
+        private PictureBox pbTutor;
         private Button btnCourse;
         private Button btnSchedule;
         private Button btnViewStudent;

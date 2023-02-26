@@ -30,7 +30,7 @@ namespace Group2_Assignment
         public Users(string a, string b)
         {
             id = a;//ETC_TUTOR001
-            password = b;//john
+            password = b;//John@123
         }
 
         public Users(string a, string b, string c)
@@ -42,32 +42,30 @@ namespace Group2_Assignment
 
 
         //method
-        public string login(string un) //un=john
+        public string login(string un) //un=ETC_TUTOR001    
         {
             string? status = null;
             con.Open();
 
-            //SqlCommand objectName = new Constructor(sqlQuery, connectionString);
-            //SqlCommand cmd = new SqlCommand("select count(*)from users where username = '" + username + "' and password ='" + password + "'", con);
             SqlCommand cmd = new SqlCommand("select count(*) from USER_T where id=@a and password =@b", con);
             cmd.Parameters.AddWithValue("@a", id);
             cmd.Parameters.AddWithValue("@b", password);
 
-            int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());//execute the command,convert into int for if and else statement
+            int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
             if (count > 0)
             {
                 SqlCommand cmd2 = new SqlCommand("select role from USER_T where id=@a and password =@b", con);
                 cmd2.Parameters.AddWithValue("@a", id);
                 cmd2.Parameters.AddWithValue("@b", password);
-                string userRole = cmd2.ExecuteScalar().ToString(); //string userRole="admin"
+                string userRole = cmd2.ExecuteScalar().ToString();
 
                 if (userRole == "tutor")
                 {
                     LoginPage lp = new LoginPage();
                     lp.Hide();
                     //redirects to Tutor Portal form
-                    Tutor_Portal a = new Tutor_Portal(un, lp.BackColor);//un=jeremy
+                    Tutor_Portal a = new Tutor_Portal(un, lp.BackColor);//un=ETC_TUTOR001
                     a.ShowDialog();
                 }
                 else if (userRole == "student")
@@ -103,19 +101,17 @@ namespace Group2_Assignment
             return status;
         }
 
-        public string forgot_password(string un) //un=john
+        public string forgot_password(string un) //un=ETC_TUTOR001
         {
             string? status = null;
             con.Open();
 
-            //SqlCommand objectName = new Constructor(sqlQuery, connectionString);
-            //SqlCommand cmd = new SqlCommand("select count(*)from users where username = '" + username + "' and password ='" + password + "'", con);
             SqlCommand cmd = new SqlCommand("select count(*) from USER_T where id=@a and ans_Q1 =@b and ans_Q2 =@c", con);
             cmd.Parameters.AddWithValue("@a", id);
             cmd.Parameters.AddWithValue("@b", ans_sq1);
             cmd.Parameters.AddWithValue("@c", ans_sq2);
 
-            int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());//execute the command,convert into int for if and else statement
+            int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
             if (count > 0)
             {
@@ -168,7 +164,7 @@ namespace Group2_Assignment
                 status = "Update Successfully";
                 ResetPassword rp = new ResetPassword();
                 rp.Hide();
-                //redirect to AdminHome form
+                //redirect to LoginPage form
                 LoginPage lp = new LoginPage();
                 lp.ShowDialog();
             }

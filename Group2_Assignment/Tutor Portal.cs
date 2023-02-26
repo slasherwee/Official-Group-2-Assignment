@@ -49,10 +49,10 @@ namespace Group2_Assignment
         private void Tutor_Portal_Load(object sender, EventArgs e)
         {
             // display the user's ID in a label
-            lblUsername.Text = "Hello, " + id;
+            lblUserID.Text = "Hello, " + id;
 
             // center the label horizontally
-            lblUsername.Left = (this.Width - lblUsername.Width) / 2;
+            lblUserID.Left = (this.Width - lblUserID.Width) / 2;
 
             // set the size of a panel to its minimum size
             panelSetting.Size = panelSetting.MinimumSize;
