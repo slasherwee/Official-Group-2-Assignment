@@ -41,7 +41,7 @@ namespace Group2_Assignment
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Student_Portal studPortal = new Student_Portal(id);
+            Student_Portal studPortal = new Student_Portal(this.BackColor);
             studPortal.ShowDialog();
             this.Close();
         }

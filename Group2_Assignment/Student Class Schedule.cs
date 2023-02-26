@@ -15,27 +15,30 @@ namespace Group2_Assignment
     public partial class Student_Class_Schedule : Form
     {
         public static string id;
-
+        private Color _formColor;
         public Student_Class_Schedule()
         {
             InitializeComponent();
         }
 
-        public Student_Class_Schedule(string i)
+        public Student_Class_Schedule(string i, Color formColor)
         {
             InitializeComponent();
             id = i;
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Student_Portal studPortal = new Student_Portal(id);
+            Student_Portal studPortal = new Student_Portal(this.BackColor);
             studPortal.ShowDialog();
             this.Close();
         }
 
         private void Student_Class_Schedule_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
+
             dgvSchedule.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSchedule.Columns[0].HeaderCell.Style.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgvSchedule.Columns[1].HeaderCell.Style.Font = new Font("Segoe UI", 10, FontStyle.Bold);

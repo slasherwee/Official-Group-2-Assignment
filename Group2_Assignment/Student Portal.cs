@@ -18,16 +18,24 @@ namespace Group2_Assignment
         //static -> to hold the variable until the application is closed
         public static string id;
         bool isCollapsed = true;
+        private Color _formColor;
 
         public Student_Portal()
         {
             InitializeComponent();
         }
 
-        public Student_Portal(string n)
+        public Student_Portal(string n, Color formColor)
         {
             InitializeComponent();
             id = n;
+            _formColor = formColor;
+        }
+
+        public Student_Portal(Color formColor)
+        {
+            InitializeComponent();
+            _formColor = formColor;
         }
 
         private void Student_Portal_Load(object sender, EventArgs e)
@@ -37,11 +45,12 @@ namespace Group2_Assignment
             lblUsername.Text = "Welcome, " + id;
             lblUsername.Left = (this.Width - lblUsername.Width) / 2; //center the label
             panelSetting.Size = panelSetting.MinimumSize;
+            this.BackColor = _formColor;
         }
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            Student_Class_Schedule studSched = new Student_Class_Schedule(id);
+            Student_Class_Schedule studSched = new Student_Class_Schedule(id, this.BackColor);
             studSched.ShowDialog();
             this.Close();
         }
@@ -55,14 +64,14 @@ namespace Group2_Assignment
 
         private void btnFees_Click(object sender, EventArgs e)
         {
-            Student_Fees studFees = new Student_Fees(id);
+            Student_Fees studFees = new Student_Fees(id, this.BackColor);
             studFees.ShowDialog();
             this.Close();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            Student_Personal_Information studInfo = new Student_Personal_Information(id);
+            Student_Personal_Information studInfo = new Student_Personal_Information(id, this.BackColor);
             studInfo.ShowDialog();
             this.Close();
         }
@@ -87,21 +96,21 @@ namespace Group2_Assignment
         private void btnTheme_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Theme theme = new Theme();
+            Student_Theme theme = new Student_Theme();
             theme.ShowDialog();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Student_Change_Password scp = new Student_Change_Password(id);
+            Student_Change_Password scp = new Student_Change_Password(id, this.BackColor);
             scp.ShowDialog();
         }
 
         private void btnUpdateSecurityQuestions_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Student_Security_Questions tsq = new Student_Security_Questions(id);
+            Student_Security_Questions tsq = new Student_Security_Questions(id, this.BackColor);
             tsq.ShowDialog();
         }
 

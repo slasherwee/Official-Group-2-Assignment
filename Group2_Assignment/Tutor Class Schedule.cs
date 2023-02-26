@@ -13,18 +13,25 @@ namespace Group2_Assignment
 {
     public partial class Tutor_Class_Schedule : Form
     {
-        private Color _formColor;
-        public static string id;//global
+        //member field
+        private Color _formColor;// Declare a private field to store the form color
+        public static string id;// Declare a static global variable to store the tutor ID
 
-        public Tutor_Class_Schedule()
+        //Constructors
+        public Tutor_Class_Schedule()// Default constructor for the form
         {
             InitializeComponent();
         }
 
+        // Overloaded constructor with parameters to set the tutor ID and form color
         public Tutor_Class_Schedule(string a, Color formColor)
         {
             InitializeComponent();
+
+            // Set the global variable for the tutor ID
             id = a;
+
+            // Set the private field for the form color
             _formColor = formColor;
         }
 
@@ -37,19 +44,22 @@ namespace Group2_Assignment
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtLocation.Text) ||
+            // Check if all fields are filled
+            if (string.IsNullOrWhiteSpace(txtVenue.Text) ||
                 string.IsNullOrWhiteSpace(txtTime.Text))
             {
                 MessageBox.Show("Please fill in all the fields.");
             }
 
-            else if (txtLocation.TextLength > 20)
+            // Check if venue text box has more than 20 characters
+            else if (txtVenue.TextLength > 20)
             {
                 MessageBox.Show("First name cannot exceed 20 characters.");
-                txtLocation.Text = txtLocation.Text.Substring(0, 20);
-                txtLocation.SelectionStart = 20;
+                txtVenue.Text = txtVenue.Text.Substring(0, 20);
+                txtVenue.SelectionStart = 20;
             }
 
+            // Check if time text box contains a valid time in the format HH:MM
             else if (!Regex.IsMatch(txtTime.Text, @"^([01]\d|2[0-3]):([0-5]\d)$"))
             {
                 MessageBox.Show("Please enter a valid time in the format HH:MM (e.g. 09:30).");
@@ -59,16 +69,20 @@ namespace Group2_Assignment
             {
                 Tutor obj1 = new Tutor(id);
 
+                // Check if a row is selected in the data grid view
                 if (dgvSchedule.SelectedCells.Count > 0)
                 {
                     int selectedRowIndex = dgvSchedule.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = dgvSchedule.Rows[selectedRowIndex];
 
+                    // Set the subject ID and day properties of the tutor object
                     obj1.SubID = selectedRow.Cells[0].Value.ToString();
                     obj1.Day = cmbDay.SelectedValue.ToString();
 
-                    MessageBox.Show(obj1.updateSchedule(obj1.SubID, id, txtLocation.Text, txtTime.Text, obj1.Day));
+                    // Call the updateSchedule method of the tutor object and display a message box with the result
+                    MessageBox.Show(obj1.updateSchedule(obj1.SubID, id, txtVenue.Text, txtTime.Text, obj1.Day));
 
+                    // Update the data grid view with the new schedule
                     DataTable vs = obj1.viewSchedule(cmbDay.SelectedValue.ToString(), obj1);
                     dgvSchedule.DataSource = vs;
                 }
@@ -114,7 +128,7 @@ namespace Group2_Assignment
             {
                 if (dgvSchedule.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    txtLocation.Text = (dgvSchedule.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    txtVenue.Text = (dgvSchedule.Rows[e.RowIndex].Cells[2].Value.ToString());
                     txtTime.Text = (dgvSchedule.Rows[e.RowIndex].Cells[3].Value.ToString());
                 }
 
