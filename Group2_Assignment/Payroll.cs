@@ -30,6 +30,7 @@ namespace Group2_Assignment
         public string TotalSalary { get => totalSalary; set => totalSalary = value; }
         public string Sid { get => SalaryID; set => SalaryID = value; }
 
+        //constructor
         public Payroll()
         {
 
@@ -50,7 +51,7 @@ namespace Group2_Assignment
             BasicSalary = bs;
         }
 
-
+        //Establish connection
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
         public static void CreateNewSalaryID(Payroll o1)

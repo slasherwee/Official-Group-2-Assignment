@@ -13,14 +13,13 @@ namespace Group2_Assignment
     public partial class frmAdminSecurityQuestions: Form
     {
         public static string UserID;
-        public frmAdminSecurityQuestions()
-        {
-            InitializeComponent();
-        }
-        public frmAdminSecurityQuestions(string id)
+        private Color _formColor;
+
+        public frmAdminSecurityQuestions(string id, Color formColor)
         {
             InitializeComponent();
             UserID = id;
+            _formColor = formColor;
         }
 
     private void btnBack_Click(object sender, EventArgs e)
@@ -30,13 +29,14 @@ namespace Group2_Assignment
             if (r1 == DialogResult.Yes)
             {
                 this.Hide();
-                frmAdminMenu am = new frmAdminMenu();
+                frmAdminMenu am = new frmAdminMenu(_formColor);
                 am.ShowDialog();
             }
         }
 
         private void frmAdminSecurityQuestions_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
             Admin obj1 = new Admin(UserID);
             Admin.viewSecurityQuestion(obj1);
             txtFAns.Text = obj1.Ans_q1;

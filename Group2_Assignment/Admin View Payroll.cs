@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,13 @@ namespace Group2_Assignment
     public partial class frmAdminViewPayroll : Form
     {
         public static string userid;
+        private Color _formColor;
 
-        public frmAdminViewPayroll()
+        public frmAdminViewPayroll(Color formColor, string id)
         {
             InitializeComponent();
+            userid = id;
+            _formColor = formColor;
         }
 
 
@@ -28,13 +32,14 @@ namespace Group2_Assignment
             if (r1 == DialogResult.Yes)
             {
                 this.Hide();
-                frmAdminMenu am = new frmAdminMenu();
+                frmAdminMenu am = new frmAdminMenu(_formColor);
                 am.ShowDialog();
             }
         }
 
         private void frmAdminViewPayroll_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
             ArrayList SalaryID = new ArrayList();
             SalaryID = Payroll.ViewSalaryID();
             foreach (var item in SalaryID)

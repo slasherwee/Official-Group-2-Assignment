@@ -149,7 +149,7 @@
             this.radFemale.TabIndex = 22;
             this.radFemale.Text = "Female";
             this.radFemale.UseVisualStyleBackColor = true;
-            this.radFemale.CheckedChanged += new System.EventHandler(this.radFemale_CheckedChanged);
+
             // 
             // radMale
             // 
@@ -163,7 +163,6 @@
             this.radMale.TabStop = true;
             this.radMale.Text = "Male";
             this.radMale.UseVisualStyleBackColor = true;
-            this.radMale.CheckedChanged += new System.EventHandler(this.radMale_CheckedChanged);
             // 
             // grpDOB
             // 

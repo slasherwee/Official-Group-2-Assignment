@@ -14,27 +14,30 @@ namespace Group2_Assignment
     public partial class Student_Change_Password : Form
     {
         public static string id;
+        private Color _formColor;
 
         public Student_Change_Password()
         {
             InitializeComponent();
         }
 
-        public Student_Change_Password(string i)
+        public Student_Change_Password(string i, Color formColor)
         {
             InitializeComponent();
             id = i;
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Student_Portal sp = new Student_Portal();
+            Student_Portal sp = new Student_Portal(this.BackColor);
             sp.ShowDialog();
         }
 
         private void Student_Change_Password_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
             pbCurPassShow.Hide();
             pbNewPassShow.Hide();
             pbConPassShow.Hide();
@@ -42,6 +45,7 @@ namespace Group2_Assignment
             Student.viewPassword(obj1);
             txtCurrentPass.Text = obj1.Password;
             txtCurrentPass.ReadOnly = true;
+            txtCurrentPass.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

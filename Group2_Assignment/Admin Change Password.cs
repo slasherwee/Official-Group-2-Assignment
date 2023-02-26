@@ -14,16 +14,16 @@ namespace Group2_Assignment
     public partial class frmAdminChangePassword : Form
     {
         public static string UserID;
-        public frmAdminChangePassword()
+        private Color _formColor;
+
+
+        public frmAdminChangePassword(string id, Color formColor)
         {
             InitializeComponent();
+            UserID = id;
+            _formColor = formColor;
         }
 
-        public frmAdminChangePassword(string id)
-        {
-            InitializeComponent();
-            UserID= id;
-        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace Group2_Assignment
             if (r1 == DialogResult.Yes)
             {
                 this.Hide();
-                frmAdminMenu am = new frmAdminMenu();
+                frmAdminMenu am = new frmAdminMenu(_formColor);
                 am.ShowDialog();
             }
         }
@@ -48,6 +48,7 @@ namespace Group2_Assignment
             picNewHide.Visible = false;
             picConShow.Visible = true;
             picConHide.Visible = false;
+            this.BackColor = _formColor;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -77,7 +78,7 @@ namespace Group2_Assignment
                 MessageBox.Show(obj1.UpdatePassword(txtConfirmPass.Text));
             }
             this.Hide();
-            frmAdminMenu am = new frmAdminMenu();
+            frmAdminMenu am = new frmAdminMenu(_formColor);
             am.ShowDialog();
 
         }

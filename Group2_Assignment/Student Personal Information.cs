@@ -14,27 +14,31 @@ namespace Group2_Assignment
     public partial class Student_Personal_Information : Form
     {
         public static string id;
+        private Color _formColor;
 
         public Student_Personal_Information()
         {
             InitializeComponent();
         }
 
-        public Student_Personal_Information(string i)
+        public Student_Personal_Information(string i, Color formColor)
         {
             InitializeComponent();
             id = i;
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Student_Portal studPortal = new Student_Portal();
+            Student_Portal studPortal = new Student_Portal(this.BackColor);
             studPortal.ShowDialog();
             this.Close();
         }
 
         private void Student_Personal_Information_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
+            txtFName.Focus();
             lblStudId.Text = id;
             Student obj1 = new Student(id);
             //call static method viewProfile by supplying the object

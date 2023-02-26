@@ -13,22 +13,24 @@ namespace Group2_Assignment
     public partial class Student_Security_Questions : Form
     {
         public static string id;
+        private Color _formColor;
 
         public Student_Security_Questions()
         {
             InitializeComponent();
         }
 
-        public Student_Security_Questions(string i)
+        public Student_Security_Questions(string i, Color formColor)
         {
             InitializeComponent();
             id = i;
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Student_Portal sp = new Student_Portal();
+            Student_Portal sp = new Student_Portal(this.BackColor);
             sp.ShowDialog();
         }
 
@@ -54,6 +56,8 @@ namespace Group2_Assignment
 
         private void Student_Security_Questions_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
+            txtFAns.Focus();
             Student obj1 = new Student(id);
             Student.viewSecurityQuestion(obj1);
             txtFAns.Text = obj1.Ans_q1;

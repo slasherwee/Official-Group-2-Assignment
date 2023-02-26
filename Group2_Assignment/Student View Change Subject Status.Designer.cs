@@ -270,6 +270,7 @@
             // 
             // Student_View_Change_Subject_Status
             // 
+            AcceptButton = btnDelReq;
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(254, 251, 233);
             CancelButton = btnBack;

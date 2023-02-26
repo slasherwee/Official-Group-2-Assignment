@@ -31,7 +31,7 @@ namespace Group2_Assignment
 
         private void picShow_Click(object sender, EventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.UseSystemPasswordChar = false;
             picHide.Show();
             picShow.Hide();
             txtPassword.PasswordChar = '\0';

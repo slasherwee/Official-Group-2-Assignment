@@ -14,28 +14,28 @@ namespace Group2_Assignment
 {
     public partial class frmAdminMenu : Form
     {
-        private bool isCollapsed = true;
+        //member field
+        private bool isCollapsed = true; //boolean variable to keep track of the collapse state of a panel
         public static string UserID; //global
-        public static string id;//global
-        private Color _formColor;
+        private Color _formColor;//private variable to store the color of the form
 
-        public frmAdminMenu()
-        {
-            InitializeComponent();
-        }
-
+        //constructor
         public frmAdminMenu(string id)
         {
             InitializeComponent();
             UserID = id;
+
         }
-        
+
         public frmAdminMenu(Color formColor)
         {
             InitializeComponent();
+            // store the passed form color in the private variable
             _formColor = formColor;
         }
 
+
+        //delegated the event for the Admin Menu form 
         private void frmAdminMenu_Load(object sender, EventArgs e)
         {
             lblUsername.Text = "Hello, " + UserID;
@@ -50,7 +50,7 @@ namespace Group2_Assignment
             //create object for frmRegisterNewUser
             //classname objectname = new constructor 
             //classname = constructor
-            frmAdminRegisterNewUser1 reg = new frmAdminRegisterNewUser1();
+            frmAdminRegisterNewUser1 reg = new frmAdminRegisterNewUser1(_formColor);
             reg.ShowDialog();
         }
 
@@ -59,7 +59,7 @@ namespace Group2_Assignment
             //Hide the current form
             this.Hide();
             //create object for frmDeleteUser
-            frmAdminDeleteUser adu = new frmAdminDeleteUser();
+            frmAdminDeleteUser adu = new frmAdminDeleteUser(_formColor);
             adu.ShowDialog();
         }
 
@@ -68,7 +68,7 @@ namespace Group2_Assignment
             //Hide the current form
             this.Hide();
             //create object for frmViewPayroll
-            frmAdminViewPayroll avp = new frmAdminViewPayroll();
+            frmAdminViewPayroll avp = new frmAdminViewPayroll(_formColor, UserID);
             avp.ShowDialog();
         }
 
@@ -77,7 +77,7 @@ namespace Group2_Assignment
             //Hide the current form
             this.Hide();
             //create object for frmPersonalInfo
-            frmAdminPersonalInfo api = new frmAdminPersonalInfo(UserID);
+            frmAdminPersonalInfo api = new frmAdminPersonalInfo(UserID,_formColor);
             api.ShowDialog();
             this.Show();
         }
@@ -110,7 +110,7 @@ namespace Group2_Assignment
             //Hide the current form
             this.Hide();
             //create object for frmfrmAdminSecurityQuestions
-            frmAdminSecurityQuestions asq = new frmAdminSecurityQuestions(UserID);
+            frmAdminSecurityQuestions asq = new frmAdminSecurityQuestions(UserID, _formColor);
             asq.ShowDialog();
         }
 
@@ -119,7 +119,7 @@ namespace Group2_Assignment
             //Hide the current form
             this.Hide();
             //create object for frmfrmAdminSecurityQuestions
-            frmAdminChangePassword acp = new frmAdminChangePassword(UserID);
+            frmAdminChangePassword acp = new frmAdminChangePassword(UserID, _formColor);
             acp.ShowDialog();
         }
 
@@ -128,7 +128,7 @@ namespace Group2_Assignment
             //Hide the current form
             this.Hide();
             //create object for frmfrmAdminSecurityQuestions
-            frmAdminViewIncomeReport avir = new frmAdminViewIncomeReport();
+            frmAdminViewIncomeReport avir = new frmAdminViewIncomeReport(_formColor);
             avir.ShowDialog();
         }
 
