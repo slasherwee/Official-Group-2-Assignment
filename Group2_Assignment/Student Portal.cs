@@ -57,7 +57,7 @@ namespace Group2_Assignment
 
         private void btnChangeSub_Click(object sender, EventArgs e)
         {
-            Student_Change_Subject studChangeSub = new Student_Change_Subject(id);
+            Student_Change_Subject studChangeSub = new Student_Change_Subject(id, this.BackColor);
             studChangeSub.ShowDialog();
             this.Close();
         }

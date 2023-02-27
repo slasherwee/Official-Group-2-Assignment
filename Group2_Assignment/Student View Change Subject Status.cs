@@ -13,27 +13,30 @@ namespace Group2_Assignment
     public partial class Student_View_Change_Subject_Status : Form
     {
         public static string id;
+        private Color _formColor;
 
         public Student_View_Change_Subject_Status()
         {
             InitializeComponent();
         }
 
-        public Student_View_Change_Subject_Status(string i)
+        public Student_View_Change_Subject_Status(string i, Color formColor)
         {
             InitializeComponent();
             id = i;
+            _formColor = formColor; 
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Student_Change_Subject studChangeSub = new Student_Change_Subject();
+            Student_Change_Subject studChangeSub = new Student_Change_Subject(this.BackColor);
             studChangeSub.ShowDialog();
             this.Close();
         }
 
         private void Student_View_Change_Subject_Status_Load(object sender, EventArgs e)
         {
+            this.BackColor = _formColor;
             txtRequestID.Focus();
             Student obj1 = new Student(id);
             DataTable vrs = obj1.viewRequestStatus(obj1);
