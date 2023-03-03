@@ -20,12 +20,14 @@ namespace Group2_Assignment
         private Color _formColor;//private variable to store the color of the form
 
         //constructor
-        public frmAdminMenu(string id)
+        public frmAdminMenu(string id, Color formColor)
         {
             InitializeComponent();
             UserID = id;
+            _formColor = formColor;
 
         }
+
 
         public frmAdminMenu(Color formColor)
         {
@@ -40,8 +42,7 @@ namespace Group2_Assignment
         {
             lblUsername.Text = "Hello, " + UserID;
             panelSetting.Size = panelSetting.MinimumSize;
-            //this.BackColor = _formColor;
-            this.BackColor = Color.FromArgb(254, 251, 233);
+            this.BackColor = _formColor;
         }
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
@@ -146,7 +147,7 @@ namespace Group2_Assignment
         private void btnTheme_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            AdminTheme theme = new AdminTheme();
+            AdminTheme theme = new AdminTheme(this.BackColor);
             theme.ShowDialog();
         }
     }

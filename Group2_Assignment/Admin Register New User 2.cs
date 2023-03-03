@@ -164,67 +164,63 @@ namespace Group2_Assignment
             bool msg = false;
             int number;
 
-            if (radMale.Checked)
-            {
-                Gender = 'M';
-            }
-            if (radFemale.Checked)
-            {
-                Gender = 'F';
-            }
-
-            int c = 11;
-            if (FN == null)
+            int c = 9;
+            if (string.IsNullOrWhiteSpace(FN))
             {
                 c -= 1;
+                MessageBox.Show("Please fill in first name");
             }
-            if (LN == null)
+            if (string.IsNullOrWhiteSpace(LN))
             {
                 c -= 1;
+                MessageBox.Show("Please fill in last name");
             }
-            if (Pass == null)
+            if (string.IsNullOrWhiteSpace(Pass))
             {
                 c -= 1;
+                MessageBox.Show("Please fill in password");
             }
-            if (E == null)
+            if (string.IsNullOrWhiteSpace(E))
             {
                 c -= 1;
+                MessageBox.Show("Please fill in email");
             }
-            if (CN == null)
+            if (string.IsNullOrWhiteSpace(CN))
             {
                 c -= 1;
+                MessageBox.Show("Please fill in contact number");
             }
-            if (SQ1 == null)
+            if (string.IsNullOrWhiteSpace(SQ1))
             {
                 c -= 1;
+                MessageBox.Show("Please fill in security question 1");
             }
-            if (SQ2 == null)
+            if (string.IsNullOrWhiteSpace(SQ2))
             {
                 c -= 1;
-            }
-            if (Gender < 0 )
-            {
-                c -= 1;
-            }
-            if (role == null)
-            {
-                c -= 1;
+                MessageBox.Show("Please fill in security question 2");
             }
             if (string.IsNullOrWhiteSpace(txtExperience.Text))
             {
+                MessageBox.Show("Please fill in experience");
                 c -= 1;
             }
             if (string.IsNullOrWhiteSpace(txtOfficeLocation.Text))
             {
+                MessageBox.Show("Please fill in office loaction");
                 c -= 1;
             }
-            if (c < 10)
+
+            if (c == 9)
             {
-                MessageBox.Show("Please check again.\nThere are some information not filled");
-                return;
-            }
-            else if (c == 11)
-            {
+                if (radMale.Checked)
+                {
+                    Gender = 'M';
+                }
+                if (radFemale.Checked)
+                {
+                    Gender = 'F';
+                }
                 //Test string using Regex.IsMatch static method.
                 //returns a bool value
                 if (Int32.TryParse(txtExperience.Text, out number))
@@ -308,8 +304,9 @@ namespace Group2_Assignment
                                         MessageBox.Show(obj10.AddTutortoUser());
 
                                         frmAdminRegisterNewUser1 ar1 = new frmAdminRegisterNewUser1(_formColor);
-                                        ar1.Hide();
-                                        this.Hide();
+                                        ar1.Close();
+
+                                        this.Close();
                                         frmAdminMenu am = new frmAdminMenu(_formColor);
                                         am.ShowDialog();
                                     }
@@ -367,8 +364,7 @@ namespace Group2_Assignment
                     MessageBox.Show("Please input with numbers.\ne.g. 2", "Experience");
                     return;
                 } 
-            }
-
+            }           
         }
 
 

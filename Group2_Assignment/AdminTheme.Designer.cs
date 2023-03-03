@@ -92,10 +92,11 @@ namespace Group2_Assignment
             // radAuto
             // 
             this.radAuto.AutoSize = true;
+            this.radAuto.Checked = true;
             this.radAuto.Location = new System.Drawing.Point(83, 336);
             this.radAuto.Name = "radAuto";
             this.radAuto.Size = new System.Drawing.Size(156, 32);
-            this.radAuto.TabIndex = 3;
+            this.radAuto.TabIndex = 1;
             this.radAuto.TabStop = true;
             this.radAuto.Text = "Auto (Default)";
             this.radAuto.UseVisualStyleBackColor = true;
@@ -119,7 +120,6 @@ namespace Group2_Assignment
             this.radLight.Name = "radLight";
             this.radLight.Size = new System.Drawing.Size(77, 32);
             this.radLight.TabIndex = 5;
-            this.radLight.TabStop = true;
             this.radLight.Text = "Light";
             this.radLight.UseVisualStyleBackColor = true;
             this.radLight.CheckedChanged += new System.EventHandler(this.radLight_CheckedChanged_1);
@@ -131,7 +131,6 @@ namespace Group2_Assignment
             this.radBlack.Name = "radBlack";
             this.radBlack.Size = new System.Drawing.Size(78, 32);
             this.radBlack.TabIndex = 6;
-            this.radBlack.TabStop = true;
             this.radBlack.Text = "Black";
             this.radBlack.UseVisualStyleBackColor = true;
             this.radBlack.CheckedChanged += new System.EventHandler(this.radBlack_CheckedChanged_1);

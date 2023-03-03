@@ -98,7 +98,7 @@ namespace Group2_Assignment
                     LoginPage lp = new LoginPage();
                     lp.Hide();
                     //redirect to AdminHome form
-                    frmAdminMenu am = new frmAdminMenu(un);
+                    frmAdminMenu am = new frmAdminMenu(un,lp.BackColor);
                     am.ShowDialog();
                  }
 
