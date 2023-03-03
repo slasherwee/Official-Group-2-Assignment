@@ -79,7 +79,7 @@ namespace Group2_Assignment
             con.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO RECEIPT_T (student_id, student_name, payment_total, payment_date, payment_method, payment_remarks) VALUES (@sid, @sname, @paytotal, @paydate, @paymethod, @payremarks)", con);
             cmd.Parameters.AddWithValue("@sid", Student_id);
-            cmd.Parameters.AddWithValue("@sname", Date);
+            cmd.Parameters.AddWithValue("@sname", student_name);
             cmd.Parameters.AddWithValue("@paytotal", Payment_total);
             cmd.Parameters.AddWithValue("@paymethod", Payment_method);
             cmd.Parameters.AddWithValue("@payremarks", Remarks);
