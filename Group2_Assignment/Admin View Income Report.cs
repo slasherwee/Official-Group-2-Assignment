@@ -60,67 +60,75 @@ namespace Group2_Assignment
         private void btnSelect_Click(object sender, EventArgs e)
         {
             string month = cmbMonth.Text;
-            int Year = int.Parse(cmbYear.Text);
-            int Month = 0;
-            switch (month)
+           
+            
+            if (string.IsNullOrWhiteSpace(month) && string.IsNullOrWhiteSpace(cmbYear.Text))
             {
-                case "January":
-                    Month = 01;
-                    break;
-                case "February":
-                    Month = 02;
-                    break;
-                case "March":
-                    Month = 03;
-                    break;
-                case "April":
-                    Month = 04;
-                    break;
-                case "May":
-                    Month = 05;
-                    break;
-                case "June":
-                    Month = 06;
-                    break;
-                case "July":
-                    Month = 07;
-                    break;
-                case "August":
-                    Month = 08;
-                    break;
-                case "September":
-                    Month = 09;
-                    break;
-                case "October":
-                    Month = 10;
-                    break;
-                case "November":
-                    Month = 11;
-                    break;
-                case "December":
-                    Month = 12;
-                    break;
+                MessageBox.Show("Please select Month and Year", "Month and Year");
             }
+            else
+            {
+                int Month = 0;
+                switch (month)
+                {
+                    case "January":
+                        Month = 01;
+                        break;
+                    case "February":
+                        Month = 02;
+                        break;
+                    case "March":
+                        Month = 03;
+                        break;
+                    case "April":
+                        Month = 04;
+                        break;
+                    case "May":
+                        Month = 05;
+                        break;
+                    case "June":
+                        Month = 06;
+                        break;
+                    case "July":
+                        Month = 07;
+                        break;
+                    case "August":
+                        Month = 08;
+                        break;
+                    case "September":
+                        Month = 09;
+                        break;
+                    case "October":
+                        Month = 10;
+                        break;
+                    case "November":
+                        Month = 11;
+                        break;
+                    case "December":
+                        Month = 12;
+                        break;
+                }
 
-            if (month != null && !string.IsNullOrWhiteSpace(cmbYear.Text))
-            {
-                Income mth = new Income(Month, Year);
-                Income.SortMonthYear(mth);
-                lblIncome.Text = "The total income for is " + month +","+ Year + " was " + mth.TotalIncome1;
-                DataTable dt = mth.ViewIncomeReportSortMonthYear(Month, Year);
-                dataGridViewIncome.DataSource = dt;
-            }
-            else if (month != null && string.IsNullOrWhiteSpace(cmbYear.Text))
-            {
-                MessageBox.Show("Please select Year", "Year");
-            }
-            else if (month != null && string.IsNullOrWhiteSpace(cmbYear.Text))
-            {
-                Income mth = new Income(Year);
-                Income.SortMonth(mth);
-                lblIncome.Text = "The total income for is " + Year + " was " + mth.TotalIncome1;
-                DataTable dt = mth.ViewIncomeReportSortYear(Year);
-                dataGridViewIncome.DataSource = dt;
+                if (!string.IsNullOrWhiteSpace(month) && !string.IsNullOrWhiteSpace(cmbYear.Text))
+                {
+                    Income mth = new Income(Month, Convert.ToInt32(cmbYear.Text));
+                    Income.SortMonthYear(mth);
+                    lblIncome.Text = "The total income for is " + month + "," + cmbYear.Text + " was " + mth.TotalIncome1;
+                    DataTable dt = mth.ViewIncomeReportSortMonthYear(Month, Convert.ToInt32(cmbYear.Text));
+                    dataGridViewIncome.DataSource = dt;
+                }
+                else if (!string.IsNullOrWhiteSpace(month) && string.IsNullOrWhiteSpace(cmbYear.Text))
+                {
+                    MessageBox.Show("Please select Year", "Year");
+                }
+                else if (string.IsNullOrWhiteSpace(month) && !string.IsNullOrWhiteSpace(cmbYear.Text))
+                {
+                    Income mth = new Income(Convert.ToInt32(cmbYear.Text));
+                    Income.SortYear(mth);
+                    lblIncome.Text = "The total income for is " + cmbYear.Text + " was " + mth.TotalIncome1;
+                    DataTable dt = mth.ViewIncomeReportSortYear(Convert.ToInt32(cmbYear.Text));
+                    dataGridViewIncome.DataSource = dt;
+                }
             }
 
 

@@ -105,7 +105,8 @@ namespace Group2_Assignment
         public DataTable ViewIncomeReportSortYear(int Year)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select receipt_no, student_id, payment_date, payment_method, payment_total  from RECEIPT_T WHERE MONTH(payment_date) = @m AND YEAR(payment_date) = @y", con);
+            SqlCommand cmd = new SqlCommand("select receipt_no, student_id, payment_date, payment_method, payment_total  from RECEIPT_T " +
+                "WHERE YEAR(payment_date) = @y", con);
             cmd.Parameters.AddWithValue("@y", Year);
             //Creating a DataTable 
             cmd.ExecuteNonQuery();
@@ -128,11 +129,11 @@ namespace Group2_Assignment
             con.Close(); //Close connection
         }
 
-        public static void SortMonth(Income o1)
+        public static void SortYear(Income o1)
         {
             con.Open();
-            SqlCommand Total = new SqlCommand("select sum(payment_total) from RECEIPT_T WHERE MONTH(payment_date) = @m ", con);
-            Total.Parameters.AddWithValue("@m", o1.Month);
+            SqlCommand Total = new SqlCommand("select sum(payment_total) from RECEIPT_T WHERE YEAR(payment_date) = @y ", con);
+            Total.Parameters.AddWithValue("@y", o1.Year);
 
             o1.TotalIncome = Total.ExecuteScalar().ToString();
             con.Close(); //Close connection

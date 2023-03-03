@@ -12,9 +12,11 @@ namespace Group2_Assignment
 {
     public partial class AdminTheme : Form
     {
-        public AdminTheme()
+        private Color _formColor;
+        public AdminTheme(Color formColor)
         {
             InitializeComponent();
+            _formColor = formColor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -50,17 +52,17 @@ namespace Group2_Assignment
 
         private void AdminTheme_Load(object sender, EventArgs e)
         {
-            if (this.BackColor == SystemColors.ControlDarkDark)
+            if (this.BackColor == Color.FromArgb(254, 251, 233))
+            {
+                radAuto.Checked = true;
+            }
+            else if (this.BackColor == SystemColors.ControlDarkDark)
             {
                 radBlack.Checked = true;
             }
             else if (this.BackColor == SystemColors.ControlLightLight)
             {
                 radLight.Checked = true;
-            }
-            else if (this.BackColor == Color.FromArgb(254, 251, 233))
-            {
-                radAuto.Checked = true;
             }
         }
     }
