@@ -36,8 +36,8 @@ namespace Group2_Assignment
             {
                 if (cb_activate_account.Text == "Activate")
                 {
-                    student_registration obj1 = new student_registration(lbl_student_id.Text, cb_activate_account.Text);
-                    MessageBox.Show(obj1.InsertData_Section_D(lbl_student_id.Text, cb_activate_account.Text));
+                    student_registration obj1 = new student_registration(lbl_stud_id.Text, cb_activate_account.Text);
+                    MessageBox.Show(obj1.InsertData_Section_D(lbl_stud_id.Text, cb_activate_account.Text));
                     pbar_student_registration.Value = 100;
                     MessageBox.Show("Temporary passowrd is : etc12345");
                     this.Hide();
