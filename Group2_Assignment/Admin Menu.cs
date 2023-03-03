@@ -40,7 +40,8 @@ namespace Group2_Assignment
         {
             lblUsername.Text = "Hello, " + UserID;
             panelSetting.Size = panelSetting.MinimumSize;
-            this.BackColor = _formColor;
+            //this.BackColor = _formColor;
+            this.BackColor = Color.FromArgb(254, 251, 233);
         }
 
         private void btnRegisterUser_Click(object sender, EventArgs e)

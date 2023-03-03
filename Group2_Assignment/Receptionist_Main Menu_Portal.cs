@@ -88,7 +88,8 @@ namespace Group2_Assignment
             lbl_user_name.Text = "Hello, " + id;
             lbl_user_name.Left = (this.Width - lbl_user_name.Width) / 2;
             ps_setting.Size = ps_setting.MinimumSize;
-            this.BackColor = _formColor;
+            //this.BackColor = _formColor;
+            this.BackColor = Color.FromArgb(254, 251, 233);
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

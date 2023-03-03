@@ -67,7 +67,7 @@ namespace Group2_Assignment
             }
             else
             {
-                Student obj1 = new Student(lblDateOutput.Text, cmbCurrentSubID.SelectedItem.ToString(), lblCurrentSubName.Text, cmbCurrentTutor.SelectedItem.ToString(), cmbNewSubID.SelectedItem.ToString(), lblNewSubNameOutput.Text, cmbNewTutor.SelectedItem.ToString(), id);
+                Student obj1 = new Student(lblDateOutput.Text, cmbCurrentSubID.SelectedItem.ToString(), lblCurrentSubNameOutput.Text, cmbCurrentTutor.SelectedItem.ToString(), cmbNewSubID.SelectedItem.ToString(), lblNewSubNameOutput.Text, cmbNewTutor.SelectedItem.ToString(), id);
                 MessageBox.Show(obj1.changeSubject());
             }
         }
